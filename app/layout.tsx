@@ -67,6 +67,9 @@ export const metadata: Metadata = {
     countryName: "Uzbekistan",
     emails: meta.emails,
     faxNumbers: meta.faxNumbers,
+    url: `${BASE_URL}`,
+    siteName: "Greencard - DV2025",
+    phoneNumbers: meta.faxNumbers,
     images: [
       {
         url: `${BASE_URL}/opengraph-image.jpg`,
