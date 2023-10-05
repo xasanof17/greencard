@@ -9,7 +9,7 @@ const Button: FC<ButtonProps> = ({ className, children }) => {
   return (
     <button
       type="button"
-      className={`btn-primary group relative overflow-hidden ${
+      className={`btn-primary group relative overflow-hidden outline-none ring-blue-500 ring-offset-2 hover:ring-2 focus:ring-2 ${
         className && className
       }`}
     >

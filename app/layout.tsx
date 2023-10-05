@@ -3,8 +3,12 @@ import type { Metadata } from "next";
 import { Footer, Navbar } from "@/layouts";
 import { Inter } from "next/font/google";
 import meta from "@/meta";
+import { BottomFixed } from "@/components";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -31,8 +35,13 @@ export const metadata: Metadata = {
   creator: "JX Team",
   colorScheme: "light",
   generator: "Next.js",
+  verification: {
+    google: "1234567890",
+    yandex: "1234567890",
+    me: "1234567890",
+  },
   icons: {
-    shortcut: `${BASE_URL}/favicon.ico`,
+    shortcut: `${BASE_URL}/icon.png`,
     icon: `${BASE_URL}/favicon.ico`,
     apple: `${BASE_URL}/favicon.ico`,
   },
@@ -75,6 +84,8 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/opengraph-image.jpg`,
         width: 1920,
         height: 1080,
+        type: "image/jpeg",
+        alt: "DV2025 - Greencard period",
       },
     ],
   },
@@ -91,6 +102,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <BottomFixed />
       </body>
     </html>
   );

@@ -12,9 +12,12 @@ const Navbar = () => {
   const pathname = usePathname();
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
-    <header className="sticky left-0 top-0 w-full shadow-md">
+    <header className="sticky left-0 top-0 z-50 w-full bg-white shadow-md">
       <nav className="container flex items-center justify-between py-3">
-        <Link href="/" className="flex items-center justify-center space-x-2">
+        <Link
+          href="/"
+          className="flex items-center justify-center space-x-2 outline-primary"
+        >
           <div className="relative h-10 w-10 lg:h-14 lg:w-14">
             <Image
               src="/assets/department_state.png"
@@ -45,7 +48,9 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="flex items-center space-x-3 lg:space-x-0">
-          <Button className="hidden sm:block">Anketani to'ldirish</Button>
+          <Button className="hidden sm:block">
+            Anketani to{"\u2019"}ldirish
+          </Button>
           <button
             onClick={() => setToggleMenu((prev) => !prev)}
             className={` block lg:hidden`}
@@ -74,7 +79,7 @@ const Navbar = () => {
               ))}
             </ul>
             <Button className="mt-5 block sm:hidden">
-              Anketani to'ldirish
+              Anketani to{"\u2019"}ldirish
             </Button>
           </div>
         )}
