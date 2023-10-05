@@ -4,23 +4,23 @@ const links = [
     title: "Asosiy",
   },
   {
-    href: "/",
+    href: "/services",
     title: "Xizmatlar",
   },
   {
-    href: "/",
+    href: "/news",
     title: "Yangiliklar",
   },
   {
-    href: "/",
+    href: "/information",
     title: "Ma'lumotlar",
   },
   {
-    href: "/",
+    href: "/questions",
     title: "Savollar",
   },
   {
-    href: "/",
+    href: "/contact",
     title: "Aloqa",
   },
 ];
