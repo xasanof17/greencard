@@ -15,4 +15,7 @@
   .btn-primary {
     @apply rounded-md bg-gradient-to-t from-blue-600 to-blue-800 px-3 py-2 text-base font-normal text-white shadow-md transition-all duration-300 ease-out;
   }
+  .title {
+    @apply text-center text-[19px] md:text-2xl font-bold text-primary;
+  }
 }

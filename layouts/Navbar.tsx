@@ -49,7 +49,7 @@ const Navbar = () => {
         </ul>
         <div className="flex items-center space-x-3 lg:space-x-0">
           <Button className="hidden sm:block">
-            Anketani to{"\u2019"}ldirish
+            Anketani to&apos;ldirish
           </Button>
           <button
             onClick={() => setToggleMenu((prev) => !prev)}
@@ -79,7 +79,7 @@ const Navbar = () => {
               ))}
             </ul>
             <Button className="mt-5 block sm:hidden">
-              Anketani to{"\u2019"}ldirish
+              Anketani to&apos;ldirish
             </Button>
           </div>
         )}
