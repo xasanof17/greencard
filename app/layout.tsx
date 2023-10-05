@@ -76,11 +76,6 @@ export const metadata: Metadata = {
         width: 1920,
         height: 1080,
       },
-      {
-        url: `${BASE_URL}/twitter-image.jpg`,
-        width: 1920,
-        height: 1080,
-      },
     ],
   },
 };
