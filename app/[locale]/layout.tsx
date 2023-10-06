@@ -134,7 +134,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={clsx(inter.className)}>
-        <NextIntlClientProvider locale={locale} messages={pick(messages)}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           {children}
           <BottomFixed />
