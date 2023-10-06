@@ -1,17 +1,22 @@
 import { Form, Welcome, Block, Policy } from "@/components";
+import { useTranslations } from "next-intl";
 
 export default function FormPage() {
+  const t = useTranslations("Form");
   return (
     <section id="formpage" role="main" className="container py-10">
-      <Welcome />
+      <Welcome
+        heading={t("heading")}
+        title={t("Welcome.title")}
+        text={t("Welcome.text")}
+      />
       <p className="mb-4 text-center text-base font-bold text-black">
-        After reading the instructions, click the &quot;Begin Entry&quot; button
-        below to enter the DV Program.
+        {t("text")}
       </p>
       <Block
-        title="Entry Instructions"
-        text="Please read the DV-2025 Entry Instructions carefully. Entrants may be disqualified for not completing the entry form correctly or by submitting more than one entry. Use the link below to view the instructions."
-        btnText="DV-2025 Instructions"
+        title={t("Entry.title")}
+        text={t("Entry.text")}
+        btnText={t("Entry.button")}
         className="my-5"
       />
       <Block

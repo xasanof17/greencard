@@ -1,1 +1,30 @@
-{"Links":{"contact":"Contact","home":"Home","information":"Information","news":"News","questions":"Questions","services":"Services"},"Buttons":{"submit":"Submit Form"},"NotFound":{"back":"Back","title":"Not Found Page"},"Layout":{"description":"DV-2025 Registration Period - October 4, 2023 at 12:00 PM (EDT) through November 7, 2023 at 12:00 PM (EST).","title":"Greencard | DV-2025 Registration Period"},"Error":{"retry":"Retry","title":"Something went wrong!"}}
+{
+  "Links": {
+    "contact": "Contact",
+    "home": "Home",
+    "information": "Information",
+    "news": "News",
+    "questions": "Questions",
+    "services": "Services"
+  },
+  "Buttons": { "submit": "Submit Form" },
+  "NotFound": { "back": "Back", "title": "Not Found Page" },
+  "Layout": {
+    "description": "DV-2025 Registration Period - October 4, 2023 at 12:00 PM (EDT) through November 7, 2023 at 12:00 PM (EST).",
+    "title": "Greencard | DV-2025 Registration Period"
+  },
+  "Form": {
+    "Entry": {
+      "button": "DV-2025 Instructions",
+      "text": "Please read the DV-2025 Entry Instructions carefully. Entrants may be disqualified for not completing the entry form correctly or by submitting more than one entry. Use the link below to view the instructions.",
+      "title": "Entry Instructions"
+    },
+    "heading": "Electronic Diversity Visa Program",
+    "text": "After reading the instructions, click the \"Begin Entry\" button below to enter the DV Program.",
+    "Welcome": {
+      "text": "Our State Department Web site for the 2025 Diversity Visa Program\n          (DV-2025) is now open. The entry submission period for DV-2025 is from\n          12:00PM EDT (GMT -4) on October 4, 2023 to 12:00PM EST (GMT -5) on\n          November 7, 2023. The entry form will only be available for submission\n          during this period and this period only. Entries will NOT be accepted\n          through the U.S. Postal Service.",
+      "title": "Welcome"
+    }
+  },
+  "Error": { "retry": "Retry", "title": "Something went wrong!" }
+}
