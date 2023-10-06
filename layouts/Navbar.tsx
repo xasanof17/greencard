@@ -13,7 +13,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const [toggleMenu, setToggleMenu] = useState(false);
   const router = useRouter();
-  const t = useTranslations("links");
+  const t = useTranslations("Links");
   const links = [
     {
       href: "/",

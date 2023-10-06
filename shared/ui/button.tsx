@@ -9,7 +9,7 @@ type ButtonProps = {
 };
 
 const Button: FC<ButtonProps> = ({ className, children, onClick }) => {
-  const t = useTranslations("buttons");
+  const t = useTranslations("Buttons");
   return (
     <button
       onClick={onClick}
@@ -19,7 +19,7 @@ const Button: FC<ButtonProps> = ({ className, children, onClick }) => {
       }`}
     >
       <span className="ease absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 group-hover:-translate-x-40" />
-      <span className="relative">{children ? children : t("default")}</span>
+      <span className="relative">{children ? children : t("submit")}</span>
     </button>
   );
 };

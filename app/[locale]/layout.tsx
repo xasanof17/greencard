@@ -1,4 +1,3 @@
-import "./globals.css";
 import clsx from "clsx";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -6,6 +5,7 @@ import { createTranslator, NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 import { Footer, Navbar } from "@/layouts";
 import { BottomFixed } from "@/components";
+import pick from "lodash/pick";
 import meta from "@/meta";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,13 +16,13 @@ type LayoutProps = {
 };
 
 async function getMessages(locale: string) {
-  // const url = `https://api.i18nexus.com/project_resources/translations/${locale}.json?api_key=${process.env.I18NEXUS_API_KEY}`;
+  // const url = `https://api.i18nexus.com/project_resources/translations/${locale}.json?api_key=${process.env.NEXT_PUBLIC_I18NEXUS_API_KEY}`;
   try {
-    return (await import(`@/messages/${locale}.json`)).default;
     // const res = await fetch(url, {
     //   next: { revalidate: false },
     // });
     // return res.json();
+    return (await import(`@/messages/${locale}.json`)).default;
   } catch (error) {
     notFound();
   }
@@ -43,8 +43,8 @@ export async function generateMetadata({ params: { locale } }: LayoutProps) {
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
   return {
     title: t("default.title"),
-    description: t("default.description"),
-    abstract: t("default.description"),
+    description: t("default.title"),
+    abstract: t("default.title"),
     alternates: {
       canonical: new URL(`${BASE_URL}`),
       languages: {
@@ -100,8 +100,8 @@ export async function generateMetadata({ params: { locale } }: LayoutProps) {
     },
     openGraph: {
       type: "website",
-      title: meta.title,
-      description: meta.description,
+      title: t("title"),
+      description: t("description"),
       countryName: "Uzbekistan",
       emails: meta.emails,
       faxNumbers: meta.faxNumbers,
@@ -120,7 +120,6 @@ export async function generateMetadata({ params: { locale } }: LayoutProps) {
     },
   };
 }
-
 export default async function LocaleLayout({
   children,
   params: { locale },
@@ -130,7 +129,10 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={clsx(inter.className)}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider
+          locale={locale}
+          messages={pick(messages, "Error")}
+        >
           <Navbar />
           {children}
           <BottomFixed />

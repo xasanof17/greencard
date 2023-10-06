@@ -1,5 +1,5 @@
-import meta from "@/meta";
 import { MetadataRoute } from "next";
+import meta from "@/meta";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
