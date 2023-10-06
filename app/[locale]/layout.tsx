@@ -5,6 +5,7 @@ import { createTranslator, NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 import { Footer, Navbar } from "@/layouts";
 import { BottomFixed } from "@/components";
+import { Metadata } from "next";
 import pick from "lodash/pick";
 import meta from "@/meta";
 
@@ -14,6 +15,7 @@ type LayoutProps = {
   children: ReactNode;
   params: { locale: string };
 };
+// export const metadata: Metadata = {};
 
 async function getMessages(locale: string) {
   // const url = `https://api.i18nexus.com/project_resources/translations/${locale}.json?api_key=${process.env.I18NEXUS_API_KEY}`;
@@ -32,19 +34,22 @@ export async function generateStaticParams() {
   return ["en", "ru", "uz"].map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params: { locale } }: LayoutProps) {
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
   const messages = await getMessages(locale);
 
   // You can use the core (non-React) APIs when you have to use next-intl
   // outside of components. Potentially this will be simplified in the future
   // (see https://next-intl-docs.vercel.app/docs/next-13/server-components).
   const t = createTranslator({ locale, messages });
-
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+
   return {
     title: t("Layout.title"),
     description: t("Layout.description"),
-    abstract: t("Layout.description"),
     alternates: {
       canonical: new URL(`${BASE_URL}`),
       languages: {
@@ -129,7 +134,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={clsx(inter.className)}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={pick(messages)}>
           <Navbar />
           {children}
           <BottomFixed />
