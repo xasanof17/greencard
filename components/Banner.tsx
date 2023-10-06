@@ -15,7 +15,7 @@ const Banner = ({ className }: BannerProps) => {
       >
         <Image
           src="/assets/banner.jpg"
-          alt=""
+          alt="new york image"
           fill
           className="rounded-xl object-cover"
           priority

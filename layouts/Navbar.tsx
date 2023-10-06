@@ -1,17 +1,45 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { links } from "@/constants";
 import { usePathname, useRouter } from "next/navigation";
 import { GrMenu } from "react-icons/gr";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
 import { Button } from "@/shared/ui";
+import { NavigationLink } from "@/components";
+import { useTranslations } from "next-intl";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [toggleMenu, setToggleMenu] = useState(false);
   const router = useRouter();
+  const t = useTranslations("links");
+  const links = [
+    {
+      href: "/",
+      title: t("home"),
+    },
+    {
+      href: "/services",
+      title: t("services"),
+    },
+    {
+      href: "/news",
+      title: t("news"),
+    },
+    {
+      href: "/information",
+      title: t("information"),
+    },
+    {
+      href: "/questions",
+      title: t("questions"),
+    },
+    {
+      href: "/contact",
+      title: t("contact"),
+    },
+  ];
   return (
     <header className="sticky left-0 top-0 z-50 w-full bg-white shadow-md">
       <nav className="container flex items-center justify-between py-3">
@@ -39,12 +67,7 @@ const Navbar = () => {
         <ul className="hidden items-center space-x-2 lg:flex">
           {links.map(({ href, title }, i) => (
             <li key={i}>
-              <Link
-                href={href}
-                className={`${pathname == href ? "text-blue-600" : ""} link`}
-              >
-                {title}
-              </Link>
+              <NavigationLink href={href}>{title}</NavigationLink>
             </li>
           ))}
         </ul>
@@ -52,9 +75,7 @@ const Navbar = () => {
           <Button
             onClick={() => router.push("/form")}
             className="hidden sm:block"
-          >
-            Anketani to&apos;ldirish
-          </Button>
+          />
           <button
             onClick={() => setToggleMenu((prev) => !prev)}
             className={` block lg:hidden`}
@@ -71,15 +92,12 @@ const Navbar = () => {
             <ul className="flex flex-col items-center justify-center space-y-3 lg:hidden">
               {links.map(({ href, title }, i) => (
                 <li key={i}>
-                  <Link
+                  <NavigationLink
                     onClick={() => setToggleMenu((prev) => !prev)}
                     href={href}
-                    className={`${
-                      pathname == href ? "text-blue-600" : ""
-                    } link`}
                   >
                     {title}
-                  </Link>
+                  </NavigationLink>
                 </li>
               ))}
             </ul>
@@ -89,9 +107,7 @@ const Navbar = () => {
                 router.push("/form");
               }}
               className="mt-5 block sm:hidden"
-            >
-              Anketani to&apos;ldirish
-            </Button>
+            />
           </div>
         )}
       </nav>
