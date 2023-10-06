@@ -19,6 +19,7 @@ const Banner = ({ className }: BannerProps) => {
           fill
           className="rounded-xl object-cover"
           priority
+          sizes="(min-width: 320px) 100vw"
         />
         <div className="absolute left-0 top-0 flex h-full flex-col items-start justify-center backdrop-blur-sm lg:justify-start">
           <div className="px-3 py-10">

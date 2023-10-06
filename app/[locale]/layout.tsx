@@ -42,9 +42,9 @@ export async function generateMetadata({ params: { locale } }: LayoutProps) {
 
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
   return {
-    title: t("default.title"),
-    description: t("default.title"),
-    abstract: t("default.title"),
+    title: t("Layout.title"),
+    description: t("Layout.description"),
+    abstract: t("Layout.description"),
     alternates: {
       canonical: new URL(`${BASE_URL}`),
       languages: {
@@ -129,10 +129,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={clsx(inter.className)}>
-        <NextIntlClientProvider
-          locale={locale}
-          messages={messages}
-        >
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           {children}
           <BottomFixed />
