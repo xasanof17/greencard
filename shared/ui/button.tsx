@@ -1,17 +1,16 @@
 "use client";
-import { FC } from "react";
-import { useRouter } from "next/navigation";
+import { Dispatch, FC, SetStateAction } from "react";
 
 type ButtonProps = {
   className?: string;
   children: React.ReactNode;
+  onClick?: () => void;
 };
 
-const Button: FC<ButtonProps> = ({ className, children }) => {
-  const router = useRouter();
+const Button: FC<ButtonProps> = ({ className, children, onClick }) => {
   return (
     <button
-      onClick={() => router.push("/form")}
+      onClick={onClick}
       type="button"
       className={`btn-primary group relative overflow-hidden outline-none ring-blue-500 ring-offset-2 hover:ring-2 focus:ring-2 ${
         className && className

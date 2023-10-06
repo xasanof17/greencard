@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { links } from "@/constants";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { GrMenu } from "react-icons/gr";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
@@ -11,6 +11,7 @@ import { Button } from "@/shared/ui";
 const Navbar = () => {
   const pathname = usePathname();
   const [toggleMenu, setToggleMenu] = useState(false);
+  const router = useRouter();
   return (
     <header className="sticky left-0 top-0 z-50 w-full bg-white shadow-md">
       <nav className="container flex items-center justify-between py-3">
@@ -48,7 +49,10 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="flex items-center space-x-3 lg:space-x-0">
-          <Button className="hidden sm:block">
+          <Button
+            onClick={() => router.push("/form")}
+            className="hidden sm:block"
+          >
             Anketani to&apos;ldirish
           </Button>
           <button
@@ -68,6 +72,7 @@ const Navbar = () => {
               {links.map(({ href, title }, i) => (
                 <li key={i}>
                   <Link
+                    onClick={() => setToggleMenu((prev) => !prev)}
                     href={href}
                     className={`${
                       pathname == href ? "text-blue-600" : ""
@@ -78,7 +83,13 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <Button className="mt-5 block sm:hidden">
+            <Button
+              onClick={() => {
+                setToggleMenu((prev) => !prev);
+                router.push("/form");
+              }}
+              className="mt-5 block sm:hidden"
+            >
               Anketani to&apos;ldirish
             </Button>
           </div>
