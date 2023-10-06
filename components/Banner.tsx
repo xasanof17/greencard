@@ -1,10 +1,18 @@
 import { Button } from "@/shared/ui";
 import Image from "next/image";
 
-const Banner = () => {
+type BannerProps = {
+  className?: string;
+};
+
+const Banner = ({ className }: BannerProps) => {
   return (
     <section role="banner" className="py-10 xl:py-20">
-      <div className="container relative grid min-h-[300px] grid-cols-2 overflow-hidden rounded-xl md:min-h-[500px] ">
+      <div
+        className={`${
+          className && className
+        } container relative grid min-h-[300px] grid-cols-2 overflow-hidden rounded-xl md:min-h-[500px]`}
+      >
         <Image
           src="/assets/banner.jpg"
           alt=""

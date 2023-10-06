@@ -2,12 +2,11 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Footer, Navbar } from "@/layouts";
 import { Inter } from "next/font/google";
-import meta from "@/meta";
 import { BottomFixed } from "@/components";
+import meta from "@/meta";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
