@@ -6,9 +6,18 @@ type BlockProps = {
   title: string;
   text: string;
   className?: string;
+  btnText?: string;
+  beginEntry?: boolean;
 };
 
-const Block: FC<BlockProps> = ({ welcome, title, text, className }) => {
+const Block: FC<BlockProps> = ({
+  welcome,
+  title,
+  text,
+  className,
+  btnText,
+  beginEntry,
+}) => {
   const variants = {
     welcome:
       "border-[#9ACFEA] rounded-md bg-gradient-to-b from-blue-100 to-blue-200",
@@ -34,12 +43,12 @@ const Block: FC<BlockProps> = ({ welcome, title, text, className }) => {
             : "px-2"
         }`}
       >
-        <p className="my-4 text-center text-sm font-normal text-[#333]">
+        <p className="my-4 text-center text-base font-normal text-[#333]">
           {text}
         </p>
         {!welcome && (
           <div className="flex items-center justify-center">
-            <Button>DV-2025 Instructions</Button>
+            <Button beginEntry={beginEntry}>{btnText}</Button>
           </div>
         )}
       </div>

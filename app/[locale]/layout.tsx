@@ -6,7 +6,6 @@ import { ReactNode } from "react";
 import { Footer, Navbar } from "@/layouts";
 import { BottomFixed } from "@/components";
 import { Metadata } from "next";
-import pick from "lodash/pick";
 import meta from "@/meta";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -50,6 +49,7 @@ export async function generateMetadata({
   return {
     title: t("Layout.title"),
     description: t("Layout.description"),
+    abstract: t("Layout.description"),
     alternates: {
       canonical: new URL(`${BASE_URL}`),
       languages: {
