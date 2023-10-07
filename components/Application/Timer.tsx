@@ -16,7 +16,7 @@ const CountdownWarning: FC = () => {
 const CountdownHurryUp: FC = () => {
   return (
     <div className="bg-red-200 p-2 text-center text-red-800">
-      Time's up, hurry up!
+      Time&apos;s up, hurry up!
     </div>
   );
 };
@@ -44,10 +44,10 @@ const Timer: FC = () => {
         </div>
         <div className="flex flex-col space-y-2 sm:space-y-0">
           <h2 className="text-center text-lg font-bold text-white sm:text-start xl:text-xl">
-            2024-yil uchun Green Card lotereyasi anketa to'ldirish shakli
+            2024-yil uchun Green Card lotereyasi anketa to&apos;ldirish shakli
           </h2>
           <p className="text-center text-base font-medium text-white sm:text-start xl:text-lg">
-            Diqqat! Anketani faqat lotin alifbosida to'ldiring!
+            Diqqat! Anketani faqat lotin alifbosida to&apos;ldiring!
           </p>
         </div>
       </div>
