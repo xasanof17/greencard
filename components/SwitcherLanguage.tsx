@@ -1,9 +1,8 @@
 "use client";
-import clsx from "clsx";
+import { FC } from "react";
 import { Select, SelectItem } from "@tremor/react";
 import { useRouter } from "next-intl/client";
 import { usePathname } from "next-intl/client";
-import { FC } from "react";
 
 type Props = {
   locale: string;
@@ -13,9 +12,8 @@ type Props = {
 const SwitcherLanguage: FC<Props> = ({ locale, className }) => {
   const router = useRouter();
   const pathname = usePathname();
-  const isActive = pathname === locale;
   const handleChange = (value: string) => {
-    router.push(pathname, { locale: value });
+    router.replace(pathname, { locale: value });
   };
 
   return (

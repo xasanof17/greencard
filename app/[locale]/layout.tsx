@@ -8,23 +8,18 @@ import { BottomFixed } from "@/components";
 import { Metadata } from "next";
 import meta from "@/meta";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
 type LayoutProps = {
   children: ReactNode;
   params: { locale: string };
 };
-// export const metadata: Metadata = {};
 
 async function getMessages(locale: string) {
-  // const url = `https://api.i18nexus.com/project_resources/translations/${locale}.json?api_key=${process.env.I18NEXUS_API_KEY}`;
   try {
-    // const res = await fetch(url, {
-    //   next: { revalidate: false },
-    // });
-    // return res.json();
     return (await import(`@/messages/${locale}.json`)).default;
   } catch (error) {
+    console.log(error);
     notFound();
   }
 }
