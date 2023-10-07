@@ -15,11 +15,7 @@ const Note = () => {
         icon={ExclamationIcon}
         color="rose"
       >
-        Diqqat! Sayt orqali Green Card anketasini to`ldirish pulli. Oilaviy
-        anketa 120 000 so`m, yakka bo`ydoq 90 000 so`m. To'lov anketa
-        to'ldirilgandan keyin Click & Payme orqali amalga oshirilishi shart.
-        To`lovni amalga oshirilmagan anketalar ro'yxatdan o'tkazilmaydi.
-      </Callout>
+        warning
 
       <div className="mt-4 flex items-center space-x-2">
         <Switch
