@@ -2,12 +2,17 @@
 import { clsx } from "clsx";
 import { DetailedHTMLProps, FC, SelectHTMLAttributes } from "react";
 
-type MonthInputControllerProps = {} & DetailedHTMLProps<
+type CountrySelectControllerProps = {
+  label: string;
+} & DetailedHTMLProps<
   SelectHTMLAttributes<HTMLSelectElement>,
   HTMLSelectElement
 >;
 
-const MonthInputController: FC<MonthInputControllerProps> = ({ ...props }) => {
+const CountrySelectController: FC<CountrySelectControllerProps> = ({
+  label,
+  ...props
+}) => {
   const errors = false;
 
   const variants = {
@@ -19,6 +24,9 @@ const MonthInputController: FC<MonthInputControllerProps> = ({ ...props }) => {
   };
   return (
     <div className="flex w-full flex-col sm:max-w-xs">
+      <label htmlFor="" className="label">
+        {label}
+      </label>
       <select
         className={clsx(
           variants.baseInput,
@@ -26,10 +34,10 @@ const MonthInputController: FC<MonthInputControllerProps> = ({ ...props }) => {
         )}
         {...props}
       >
-        <option value="">Avgust</option>
+        <option value="">Uzbekistan</option>
       </select>
     </div>
   );
 };
 
-export default MonthInputController;
+export default CountrySelectController;

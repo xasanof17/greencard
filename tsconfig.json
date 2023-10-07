@@ -27,7 +27,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "shared/controllers/SelectInputController"
   ],
   "exclude": ["node_modules"]
 }

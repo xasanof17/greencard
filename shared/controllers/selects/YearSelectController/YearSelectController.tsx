@@ -2,12 +2,12 @@
 import { clsx } from "clsx";
 import { DetailedHTMLProps, FC, SelectHTMLAttributes } from "react";
 
-type YearInputControllerProps = {} & DetailedHTMLProps<
+type YearSelectControllerProps = {} & DetailedHTMLProps<
   SelectHTMLAttributes<HTMLSelectElement>,
   HTMLSelectElement
 >;
 
-const YearInputController: FC<YearInputControllerProps> = ({ ...props }) => {
+const YearSelectController: FC<YearSelectControllerProps> = ({ ...props }) => {
   const errors = false;
 
   const variants = {
@@ -32,4 +32,4 @@ const YearInputController: FC<YearInputControllerProps> = ({ ...props }) => {
   );
 };
 
-export default YearInputController;
+export default YearSelectController;

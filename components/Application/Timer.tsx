@@ -35,7 +35,12 @@ const Timer: FC = () => {
     <div className="my-5 flex grid-cols-5 flex-col space-y-4 rounded-2xl bg-primary/70 px-4 py-4 sm:my-10 lg:grid lg:space-y-0 lg:px-2 lg:py-3 xl:px-10 xl:py-10">
       <div className="col-span-3 flex flex-col items-center space-x-3 space-y-2 sm:flex-row sm:space-y-0 lg:space-x-2 xl:space-x-3">
         <div className="relative h-12 w-12 lg:h-10 lg:w-10 xl:h-14 xl:w-14">
-          <Image src="/assets/department_state.png" alt="" fill />
+          <Image
+            src="/assets/department_state.png"
+            alt=""
+            fill
+            sizes="(min-width: 280px) 100vw"
+          />
         </div>
         <div className="flex flex-col space-y-2 sm:space-y-0">
           <h2 className="text-center text-lg font-bold text-white sm:text-start xl:text-xl">
