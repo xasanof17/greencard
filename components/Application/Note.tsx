@@ -16,7 +16,7 @@ const Note = () => {
         color="rose"
       >
         warning
-
+      </Callout>
       <div className="mt-4 flex items-center space-x-2">
         <Switch
           checked={enabled}
