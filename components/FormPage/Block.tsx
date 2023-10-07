@@ -34,7 +34,7 @@ const Block: FC<BlockProps> = ({
           welcome ? variants.welcome : variants.notWelcome
         }`}
       >
-        <h2 className="text-center text-[22px] font-medium capitalize text-primary drop-shadow-sm">
+        <h2 className="text-center text-[22px] font-medium capitalize text-primary">
           {title}
         </h2>
       </div>

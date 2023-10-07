@@ -1,5 +1,4 @@
 // FormPage components exports
-export { default as Form } from "./FormPage/Form";
 export { default as Welcome } from "./FormPage/Welcome";
 export { default as Block } from "./FormPage/Block";
 export { default as Policy } from "./FormPage/Policy";
@@ -13,3 +12,5 @@ export { default as SwitcherLanguage } from "./SwitcherLanguage";
 
 // Application exports
 export { default as Timer } from "./Application/Timer";
+export { default as Note } from "./Application/Note";
+export { default as Form } from "./Application/Form";

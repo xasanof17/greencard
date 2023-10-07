@@ -1,5 +1,5 @@
 "use client";
-import { Timer } from "@/components";
+import { Form, Note, Timer } from "@/components";
 
 export default function ApplicationPage() {
   return (
@@ -10,6 +10,10 @@ export default function ApplicationPage() {
     >
       <h1 className="title">Welcome to Application page</h1>
       <Timer />
+      <Note />
+      <div className="my-10">
+        <Form title="Shaxsiy ma'lumotlar" />
+      </div>
     </section>
   );
 }
