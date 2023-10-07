@@ -8,6 +8,7 @@ type BlockProps = {
   className?: string;
   btnText?: string;
   beginEntry?: boolean;
+  onClick?: () => void;
 };
 
 const Block: FC<BlockProps> = ({
@@ -17,6 +18,7 @@ const Block: FC<BlockProps> = ({
   className,
   btnText,
   beginEntry,
+  onClick
 }) => {
   const variants = {
     welcome:
@@ -48,7 +50,7 @@ const Block: FC<BlockProps> = ({
         </p>
         {!welcome && (
           <div className="flex items-center justify-center">
-            <Button beginEntry={beginEntry}>{btnText}</Button>
+            <Button onClick={onClick} beginEntry={beginEntry}>{btnText}</Button>
           </div>
         )}
       </div>

@@ -1,8 +1,11 @@
-import { Form, Welcome, Block, Policy } from "@/components";
+"use client";
+import { Welcome, Block, Policy } from "@/components";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 export default function FormPage() {
   const t = useTranslations("Form");
+  const router = useRouter();
   return (
     <section id="formpage" role="main" className="container py-10">
       <Welcome
@@ -18,12 +21,14 @@ export default function FormPage() {
         text={t("Entry.text")}
         btnText={t("Entry.button")}
         className="my-5"
+        onClick={() => router.push("/")}
       />
       <Block
         title={t("Photo.title")}
         text={t("Photo.text")}
         btnText={t("Photo.button")}
         className="my-5"
+        onClick={() => router.push("https://tsg.phototool.state.gov/photo")}
       />
       <Block
         title={t("Begin.title")}
@@ -31,12 +36,14 @@ export default function FormPage() {
         btnText={t("Begin.button")}
         className="my-5"
         beginEntry
+        onClick={() => router.push("/form/application")}
       />
       <Block
         title={t("StatusCheck.title")}
         text={t("StatusCheck.text")}
         btnText={t("StatusCheck.button")}
         className="my-5"
+        onClick={() => router.push("/")}
       />
       <div className="mt-16 border-y-2 py-5">
         <Policy
