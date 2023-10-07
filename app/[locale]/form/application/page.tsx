@@ -1,7 +1,20 @@
 "use client";
 import { Form, Note, Timer } from "@/components";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type Inputs = {
+  example: string;
+  exampleRequired: string;
+};
 
 export default function ApplicationPage() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
   return (
     <section
       id="application"
@@ -11,9 +24,9 @@ export default function ApplicationPage() {
       <h1 className="title">Welcome to Application page</h1>
       <Timer />
       <Note />
-      <div className="my-10">
+      <form className="my-10">
         <Form title="Shaxsiy ma'lumotlar" />
-      </div>
+      </form>
     </section>
   );
 }

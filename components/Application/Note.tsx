@@ -36,7 +36,7 @@ const Note = () => {
             } inline-block h-4 w-4 transform rounded-full bg-white transition`}
           />
         </Switch>
-        <p className="text-base font-medium">
+        <p className="text-sm sm:text-base font-medium">
           Men lotereyada ishtirok etish{" "}
           <Link href="/" className="inline-block text-blue-500">
             shartlariga
