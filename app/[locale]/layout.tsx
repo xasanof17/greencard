@@ -8,10 +8,12 @@ import { Metadata } from "next";
 import meta from "@/meta";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
+
 type LayoutProps = {
   children: ReactNode;
   params: { locale: string };
 };
+
 async function getMessages(locale: string) {
   try {
     return (await import(`@/messages/${locale}.json`)).default;
@@ -20,9 +22,11 @@ async function getMessages(locale: string) {
     notFound();
   }
 }
+
 export async function generateStaticParams() {
   return ["en", "ru", "uz"].map((locale) => ({ locale }));
 }
+
 export async function generateMetadata({
   params: { locale },
 }: {
