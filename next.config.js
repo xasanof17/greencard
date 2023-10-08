@@ -5,7 +5,7 @@ const withNextIntl = require("next-intl/plugin")("./18n.ts");
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["upload.wikimedia.org"],
+    domains: ["upload.wikimedia.org", "greencards.uz"],
   },
 };
 

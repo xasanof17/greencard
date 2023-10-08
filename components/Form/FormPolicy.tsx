@@ -1,11 +1,11 @@
-type Props = {
+type FormPolicy = {
   title: string;
   text: string;
 };
 
-const Policy = ({ title, text }: Props) => {
+const FormPolicy = ({ title, text }: FormPolicy) => {
   return (
-    <div className="inline-block mb-5">
+    <div className="mb-5 inline-block">
       <p className="text-base font-normal leading-5 tracking-wide text-[#333]">
         <span className="font-bold uppercase">{title}:</span> {text}
       </p>
@@ -13,4 +13,4 @@ const Policy = ({ title, text }: Props) => {
   );
 };
 
-export default Policy;
+export default FormPolicy;

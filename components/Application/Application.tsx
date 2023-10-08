@@ -4,6 +4,7 @@ import {
   Note,
   Timer,
   PicturePlacementForm,
+  ResidenceAddressForm,
 } from "@/components";
 import { useTranslations } from "next-intl";
 
@@ -21,6 +22,7 @@ const Application = () => {
       <form className="my-10">
         <PersonalDataForm title="Shaxsiy ma'lumotlar" />
         <PicturePlacementForm title="Rasm joylashtirish" />
+        <ResidenceAddressForm title="Yashash manzili" />
       </form>
     </section>
   );

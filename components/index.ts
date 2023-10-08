@@ -1,9 +1,10 @@
 // FormPage components exports
-export { default as Welcome } from "./Form/Welcome";
+export { default as FormWelcome } from "./Form/FormWelcome";
 export { default as FormBlock } from "./Form/FormBlock";
-export { default as Policy } from "./Form/Policy";
+export { default as FormPolicy } from "./Form/FormPolicy";
 export { default as PersonalDataForm } from "./Form/PersonalDataForm";
 export { default as PicturePlacementForm } from "./Form/PicturePlacementForm";
+export { default as ResidenceAddressForm } from "./Form/ResidenceAddressForm";
 
 // Other components exports
 export { default as Banner } from "./Banner";
