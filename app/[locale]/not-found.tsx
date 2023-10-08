@@ -3,7 +3,7 @@ import { Button } from "@/shared/ui";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 
-export default function NotFoundPage() {
+export default function NotFound() {
   const t = useTranslations("NotFound");
   const router = useRouter();
 
