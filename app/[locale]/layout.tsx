@@ -23,7 +23,7 @@ async function getMessages(locale: string) {
   }
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return ["en", "ru", "uz"].map((locale) => ({ locale }));
 }
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
