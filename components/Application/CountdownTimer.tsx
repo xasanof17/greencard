@@ -1,4 +1,5 @@
 "use client";
+import { useTranslations } from "next-intl";
 import { FC, useEffect, useState } from "react";
 
 interface CountdownTimerProps {
@@ -73,11 +74,13 @@ const CountdownTimer: FC<CountdownTimerProps> = ({
     return () => clearInterval(timerInterval);
   }, [expiryTimestamp, onTimeUp]);
 
+  const t = useTranslations("Application.Timer.Dates");
+
   const timeUnits = [
-    { label: "days", value: timeLeft.days },
-    { label: "hours", value: timeLeft.hours },
-    { label: "minutes", value: timeLeft.minutes },
-    { label: "seconds", value: timeLeft.seconds },
+    { label: t("day"), value: timeLeft.days },
+    { label: t("hours"), value: timeLeft.hours },
+    { label: t("minutes"), value: timeLeft.minutes },
+    { label: t("seconds"), value: timeLeft.seconds },
   ];
 
   return (
@@ -85,7 +88,7 @@ const CountdownTimer: FC<CountdownTimerProps> = ({
       <div className="grid grid-cols-4 gap-3 sm:gap-7 lg:gap-2 xl:gap-4">
         {timeUnits.map((unit) => (
           <div key={unit.label} className="text-center">
-            <p className="rounded-full bg-white p-1 text-2xl xl:text-3xl font-bold text-primary">
+            <p className="rounded-full bg-white p-1 text-2xl font-bold text-primary xl:text-3xl">
               {unit.value}
             </p>
             <span className="text-sm font-medium text-white">{unit.label}</span>
