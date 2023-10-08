@@ -35,9 +35,9 @@ export async function generateMetadata({
   const t = createTranslator({ locale, messages });
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
   return {
-    title: t("Layout.title"),
-    description: t("Layout.description"),
-    abstract: t("Layout.description"),
+    title: t("Layout.title", { defaultValue: "Greencard" }),
+    description: t("Layout.description", { defaultValue: "Description" }),
+    abstract: t("Layout.description", { defaultValue: "Description" }),
     alternates: {
       canonical: new URL(`${BASE_URL}`),
       languages: {
