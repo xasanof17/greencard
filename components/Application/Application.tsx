@@ -1,3 +1,4 @@
+"use client";
 import { Form, Note, Timer } from "@/components";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { useTranslations } from "next-intl";
@@ -11,7 +12,10 @@ const Application = () => {
       role="main"
       className="container flex flex-col py-6 md:py-10"
     >
-      <Link href="/form" className="mb-7 text-sm flex items-center space-x-2 md:mb-5">
+      <Link
+        href="/form"
+        className="mb-7 flex items-center space-x-2 text-sm md:mb-5"
+      >
         <BiLeftArrowAlt fontSize={20} /> <span>{t("Back.title")}</span>
       </Link>
       <h1 className="title">{t("title")}</h1>
