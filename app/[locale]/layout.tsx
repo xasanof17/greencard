@@ -24,8 +24,8 @@ async function getMessages(locale: string) {
 }
 
 export async function generateStaticParams() {
-  return ["en", "ru", "uz"];
-  // return ["en", "ru", "uz"].map((locale) => ({ locale }));
+  // return ["en", "ru", "uz"];
+  return ["en", "ru", "uz"].map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({

@@ -1,9 +1,9 @@
 "use client";
 import { useTranslations } from "next-intl";
-import FeaturesCard from "./FeaturesCard";
 import { LuCalendarClock } from "react-icons/lu";
 import { IoEarthOutline } from "react-icons/io5";
 import { BiSolidMessageDetail } from "react-icons/bi";
+import FeaturesCard from "./FeaturesCard";
 
 const Features = () => {
   const t = useTranslations("Features");
