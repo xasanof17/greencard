@@ -13,7 +13,7 @@ const SwitcherLanguage: FC<Props> = ({ locale, className }) => {
   const router = useRouter();
   const pathname = usePathname();
   const handleChange = (value: string) => {
-    router.replace(pathname, { locale: value });
+    router.replace(pathname, { locale: value, scroll: false });
   };
 
   return (

@@ -1,5 +1,5 @@
 "use client";
-import { clsx } from "clsx";
+import clsx from "clsx";
 import { DetailedHTMLProps, FC, SelectHTMLAttributes } from "react";
 
 type YearSelectControllerProps = {} & DetailedHTMLProps<

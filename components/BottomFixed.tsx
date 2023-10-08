@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/shared/ui";
 import { useRouter } from "next/navigation";
-import { clsx } from "clsx";
+import clsx from "clsx";
 
 type BottomFixedProps = {
   notShow?: boolean;

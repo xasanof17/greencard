@@ -1,5 +1,5 @@
 "use client";
-import { clsx } from "clsx";
+import clsx from "clsx";
 import { DetailedHTMLProps, FC, InputHTMLAttributes } from "react";
 
 type TextInputControllerProps = {
