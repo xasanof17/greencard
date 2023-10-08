@@ -6,7 +6,7 @@ import { GrMenu } from "react-icons/gr";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
 import { Button } from "@/shared/ui";
-import { NavigationLink, SwitcherLanguage } from "@/components";
+import { Logo, NavigationLink, SwitcherLanguage } from "@/components";
 import { useTranslations, useLocale } from "next-intl";
 
 const Navbar = () => {
@@ -48,22 +48,7 @@ const Navbar = () => {
           href="/"
           className="flex items-center justify-center space-x-2 outline-primary"
         >
-          <div className="relative h-10 w-10 lg:h-14 lg:w-14">
-            <Image
-              src="/assets/department_state.png"
-              alt="logo"
-              fill
-              sizes="(min-width: 320px) 100vw"
-            />
-          </div>
-          <div className="flex flex-col">
-            <h3 className="text-sm font-medium leading-5 sm:text-base">
-              U.S. Department of State
-            </h3>
-            <p className="text-xs font-normal leading-4 sm:text-sm">
-              Bureau of Consular Affairs
-            </p>
-          </div>
+          <Logo />
         </Link>
         <ul
           className={`hidden items-center lg:flex ${

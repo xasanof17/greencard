@@ -21,7 +21,7 @@ const NewsCards = () => {
             <span className="mb-3 text-sm font-medium text-gray-400">
               01.10.2023
             </span>
-            <h3 className="text-base font-medium uppercase text-primary">
+            <h3 className="text-base font-medium uppercase text-black">
               1-OKTABR — USTOZ VA MURABBIYLAR KUNI MUBORAK BO&apos;LSIN!
             </h3>
           </div>

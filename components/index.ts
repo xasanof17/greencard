@@ -21,3 +21,9 @@ export { default as News } from "./News/News";
 
 // Faq exports
 export { default as Faq } from "./Faq/Faq";
+
+// Opportunity exports
+export { default as Opportunity } from "./Opportunity";
+
+// Logo exports
+export { default as Logo } from "./Logo";

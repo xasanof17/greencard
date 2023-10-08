@@ -6,6 +6,7 @@ import { ReactNode } from "react";
 import { Footer, Navbar } from "@/layouts";
 import { Metadata } from "next";
 import meta from "@/meta";
+import { Opportunity } from "@/components";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
@@ -129,6 +130,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           {children}
+          <Opportunity />
           <Footer />
         </NextIntlClientProvider>
       </body>
