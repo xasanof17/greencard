@@ -11,6 +11,7 @@ export { default as NavigationLink } from "./NavigationLink";
 export { default as SwitcherLanguage } from "./SwitcherLanguage";
 
 // Application exports
+export { default as Application } from "./Application/Application";
 export { default as Timer } from "./Application/Timer";
 export { default as Note } from "./Application/Note";
 export { default as Form } from "./Application/Form";
