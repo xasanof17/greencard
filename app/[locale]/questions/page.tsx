@@ -1,3 +1,10 @@
+import { BottomFixed } from "@/components";
+
 export default function QuestionsPage() {
-  return <div>QuestionsPage</div>;
+  return (
+    <>
+      <p>ServicePage</p>
+      <BottomFixed />
+    </>
+  );
 }

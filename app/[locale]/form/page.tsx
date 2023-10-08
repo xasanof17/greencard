@@ -1,5 +1,5 @@
 "use client";
-import { Welcome, Block, Policy } from "@/components";
+import { Welcome, Block, Policy, BottomFixed } from "@/components";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 

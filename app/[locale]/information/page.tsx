@@ -1,4 +1,10 @@
+import { BottomFixed } from "@/components";
 
 export default function InformationPage() {
-  return <div>InformationPage</div>;
+  return (
+    <>
+      <p>ServicePage</p>
+      <BottomFixed />
+    </>
+  );
 }

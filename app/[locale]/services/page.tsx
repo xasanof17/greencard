@@ -1,5 +1,10 @@
-import React from "react";
+import { BottomFixed } from "@/components";
 
 export default function ServicesPage() {
-  return <div>ServicesPage</div>;
+  return (
+    <>
+      <p>ServicePage</p>
+      <BottomFixed />
+    </>
+  );
 }

@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { createTranslator, NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 import { Footer, Navbar } from "@/layouts";
-import { BottomFixed } from "@/components";
 import { Metadata } from "next";
 import meta from "@/meta";
 
@@ -132,7 +131,6 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           {children}
-          <BottomFixed />
           <Footer />
         </NextIntlClientProvider>
       </body>
