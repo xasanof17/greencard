@@ -1,3 +1,4 @@
+"use client";
 import { useTranslations } from "next-intl";
 import FeaturesCard from "./FeaturesCard";
 import { LuCalendarClock } from "react-icons/lu";
