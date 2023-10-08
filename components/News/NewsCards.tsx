@@ -17,7 +17,7 @@ const NewsCards = () => {
               className="rounded-t-lg object-cover"
             />
           </div>
-          <div className="flex flex-col p-5">
+          <div className="flex flex-col p-3 lg:p-5">
             <span className="mb-3 text-sm font-medium text-gray-400">
               01.10.2023
             </span>

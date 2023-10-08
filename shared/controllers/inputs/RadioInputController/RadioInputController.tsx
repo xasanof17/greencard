@@ -26,8 +26,8 @@ const RadioInputController: FC<RadioInputControllerProps> = ({
   return (
     <div className="flex items-center space-x-2 border px-5 py-1 checked:border-blue-500 checked:ring-1 checked:ring-blue-500 hover:border-blue-500 hover:ring-1 focus:border-blue-500 focus:ring-1">
       <input
-        type="radioInputController"
-        id={`radioInputController-${value}`}
+        type="radio"
+        id={`radio-${value}`}
         name="gender"
         value={value}
         checked={checked}
@@ -36,10 +36,7 @@ const RadioInputController: FC<RadioInputControllerProps> = ({
       />
       <div className="flex items-center">
         <Icon className="h-6 w-6" />
-        <label
-          htmlFor={`radioInputController-${value}`}
-          className="text-primary"
-        >
+        <label htmlFor={`radio-${value}`} className="text-primary">
           {label}
         </label>
       </div>

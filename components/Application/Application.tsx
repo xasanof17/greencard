@@ -1,5 +1,10 @@
 "use client";
-import { Form, Note, Timer } from "@/components";
+import {
+  PersonalDataForm,
+  Note,
+  Timer,
+  PicturePlacementForm,
+} from "@/components";
 import { useTranslations } from "next-intl";
 
 const Application = () => {
@@ -14,7 +19,8 @@ const Application = () => {
       <Timer />
       <Note />
       <form className="my-10">
-        <Form title="Shaxsiy ma'lumotlar" />
+        <PersonalDataForm title="Shaxsiy ma'lumotlar" />
+        <PicturePlacementForm title="Rasm joylashtirish" />
       </form>
     </section>
   );

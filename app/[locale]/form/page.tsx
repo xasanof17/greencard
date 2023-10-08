@@ -1,5 +1,5 @@
 "use client";
-import { Welcome, Block, Policy, BottomFixed } from "@/components";
+import { Welcome, FormBlock, Policy, BottomFixed } from "@/components";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 
@@ -16,21 +16,21 @@ export default function FormPage() {
       <p className="mb-4 text-center text-base font-bold text-black">
         {t("text")}
       </p>
-      <Block
+      <FormBlock
         title={t("Entry.title")}
         text={t("Entry.text")}
         btnText={t("Entry.button")}
         className="my-5"
         onClick={() => router.push("/")}
       />
-      <Block
+      <FormBlock
         title={t("Photo.title")}
         text={t("Photo.text")}
         btnText={t("Photo.button")}
         className="my-5"
         onClick={() => router.push("https://tsg.phototool.state.gov/photo")}
       />
-      <Block
+      <FormBlock
         title={t("Begin.title")}
         text={t("Begin.text")}
         btnText={t("Begin.button")}
@@ -38,7 +38,7 @@ export default function FormPage() {
         beginEntry
         onClick={() => router.push("/form/application")}
       />
-      <Block
+      <FormBlock
         title={t("StatusCheck.title")}
         text={t("StatusCheck.text")}
         btnText={t("StatusCheck.button")}

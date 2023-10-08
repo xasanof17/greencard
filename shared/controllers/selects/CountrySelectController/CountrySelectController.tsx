@@ -1,6 +1,7 @@
 "use client";
 import clsx from "clsx";
 import { DetailedHTMLProps, FC, SelectHTMLAttributes } from "react";
+import { SearchSelect, SearchSelectItem, SelectItem } from "@tremor/react";
 
 type CountrySelectControllerProps = {
   label: string;
@@ -16,9 +17,9 @@ const CountrySelectController: FC<CountrySelectControllerProps> = ({
   const errors = false;
 
   const variants = {
-    baseInput:
+    baseSelect:
       "w-full rounded-md border-2 px-2 py-[6px] text-base font-medium uppercase outline-none sm:py-1 hover:ring-1 focus:ring-1",
-    complate: "hover:border-blue-500  focus:border-blue-500 text-primary",
+    complate: "hover:border-blue-500  focus:border-blue-500 text-black",
     error:
       "border-red-500 hover:border-red-500  focus:border-red-500 text-red-500",
   };
@@ -27,15 +28,23 @@ const CountrySelectController: FC<CountrySelectControllerProps> = ({
       <label htmlFor="" className="label">
         {label}
       </label>
-      <select
+      <SearchSelect
+        value={"value"}
+        defaultValue="Uzbekistan"
+        className="!hover:border-blue-500 !focus:border-blue-500 !text-base !font-medium uppercase !text-black"
+      >
+        <SearchSelectItem value="uzbekistan">uzbekistan</SearchSelectItem>
+        <SearchSelectItem value="uzbekistan">america</SearchSelectItem>
+      </SearchSelect>
+      {/* <select
         className={clsx(
-          variants.baseInput,
+          variants.baseSelect,
           errors ? variants.error : variants.complate,
         )}
         {...props}
       >
         <option value="">Uzbekistan</option>
-      </select>
+      </select> */}
     </div>
   );
 };

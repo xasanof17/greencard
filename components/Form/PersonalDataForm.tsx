@@ -1,13 +1,17 @@
 "use client";
 import { FC, useState } from "react";
-import Input from "./Input";
-import Radio from "./Radio";
+import Input from "../Application/Input";
+import Radio from "../Application/Radio";
 import { IoIosMan, IoIosWoman } from "react-icons/io";
 import {
   MonthInputController,
   NumInputController,
+  RadioInputController,
+  TextInputController,
   YearInputController,
 } from "@/shared/controllers";
+import CountrySelectController from "@/shared/controllers/selects/CountrySelectController/CountrySelectController";
+import FormHeader from "./FormHeader";
 
 type FormProps = {
   title: string;
@@ -20,16 +24,18 @@ const Form: FC<FormProps> = ({ title }) => {
     setSelectedGender(value);
   };
   return (
-    <div className="my-3 flex flex-col">
-      <div className="flex w-full items-center justify-start rounded-t-md border border-slate-300 bg-gradient-to-b from-slate-100 to-slate-200 px-5 py-2 md:py-3">
-        <h2 className="text-center text-lg font-medium capitalize text-primary md:uppercase">
-          {title}
-        </h2>
-      </div>
+    <div className="my-10 flex flex-col">
+      <FormHeader title={title} />
       <div className="flex flex-col space-y-5 border px-3 py-6 sm:p-3 md:px-5 md:py-5">
         <div className="flex flex-col justify-start space-y-4 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0">
-          <Input label="Familiyangiz (Ingliz tilida)" />
-          <Input label="Ismingiz (Ingliz tilida)" />
+          <TextInputController
+            label="Familiyangiz (Ingliz tilida)"
+            placeholder="Familiyangiz"
+          />
+          <TextInputController
+            label="Ismingiz (Ingliz tilida)"
+            placeholder="Ismingiz"
+          />
         </div>
         <div className="flex flex-col items-start space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
           <div className="flex flex-col justify-start sm:flex-col">
@@ -37,14 +43,14 @@ const Form: FC<FormProps> = ({ title }) => {
               Jinsingiz
             </label>
             <div className="grid w-full grid-cols-2 items-center space-x-4 sm:max-w-xs">
-              <Radio
+              <RadioInputController
                 label="Man"
                 value="man"
                 checked={selectedGender === "man"}
                 onChange={handleGenderChange}
                 Icon={IoIosMan}
               />
-              <Radio
+              <RadioInputController
                 label="Woman"
                 value="woman"
                 checked={selectedGender === "woman"}
@@ -63,6 +69,11 @@ const Form: FC<FormProps> = ({ title }) => {
               <YearInputController />
             </div>
           </div>
+        </div>
+        <div className="flex flex-col items-start space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+          <CountrySelectController label="Davlatingiz" />
+          <CountrySelectController label="Viloyatingiz" />
+          <CountrySelectController label="Tumaningiz" />
         </div>
       </div>
     </div>

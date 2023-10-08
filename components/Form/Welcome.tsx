@@ -1,4 +1,4 @@
-import Block from "./Block";
+import Block from "./FormBlock";
 
 type Props = {
   heading: string;

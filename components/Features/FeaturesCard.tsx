@@ -59,7 +59,7 @@ const FeaturesCard = ({Icon, title, text}: FeaturesData) => {
           >
             {title}
           </h3>
-          <p className="text-sm font-medium text-black">{text}</p>
+          <p className="text-sm lg:text-base font-medium text-black">{text}</p>
         </div>
       {/* ))} */}
     </>

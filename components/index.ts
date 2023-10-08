@@ -1,7 +1,9 @@
 // FormPage components exports
-export { default as Welcome } from "./FormPage/Welcome";
-export { default as Block } from "./FormPage/Block";
-export { default as Policy } from "./FormPage/Policy";
+export { default as Welcome } from "./Form/Welcome";
+export { default as FormBlock } from "./Form/FormBlock";
+export { default as Policy } from "./Form/Policy";
+export { default as PersonalDataForm } from "./Form/PersonalDataForm";
+export { default as PicturePlacementForm } from "./Form/PicturePlacementForm";
 
 // Other components exports
 export { default as Banner } from "./Banner";
@@ -14,7 +16,6 @@ export { default as SwitcherLanguage } from "./SwitcherLanguage";
 export { default as Application } from "./Application/Application";
 export { default as Timer } from "./Application/Timer";
 export { default as Note } from "./Application/Note";
-export { default as Form } from "./Application/Form";
 
 // News exports
 export { default as News } from "./News/News";

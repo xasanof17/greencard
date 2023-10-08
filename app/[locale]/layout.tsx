@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 import { Footer, Navbar } from "@/layouts";
 import { Metadata } from "next";
 import meta from "@/meta";
-import { Opportunity } from "@/components";
+import { BottomFixed, Opportunity } from "@/components";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
@@ -131,6 +131,7 @@ export default async function LocaleLayout({
           <Navbar />
           {children}
           <Opportunity />
+          <BottomFixed />
           <Footer />
         </NextIntlClientProvider>
       </body>
