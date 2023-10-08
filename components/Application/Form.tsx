@@ -21,8 +21,8 @@ const Form: FC<FormProps> = ({ title }) => {
   };
   return (
     <div className="my-3 flex flex-col">
-      <div className="flex w-full items-center justify-start rounded-t-md border border-slate-300 bg-gradient-to-b from-slate-100 to-slate-200 px-5 py-3">
-        <h2 className="text-center text-lg font-medium uppercase text-primary">
+      <div className="flex w-full items-center justify-start rounded-t-md border border-slate-300 bg-gradient-to-b from-slate-100 to-slate-200 px-5 py-2 md:py-3">
+        <h2 className="text-center text-lg font-medium capitalize text-primary md:uppercase">
           {title}
         </h2>
       </div>

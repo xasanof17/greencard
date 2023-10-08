@@ -18,14 +18,14 @@ const Block: FC<BlockProps> = ({
   className,
   btnText,
   beginEntry,
-  onClick
+  onClick,
 }) => {
   const variants = {
     welcome:
       "border-[#9ACFEA] rounded-md bg-gradient-to-b from-blue-100 to-blue-200",
     notWelcome:
       "border-slate-300 rounded-t-md bg-gradient-to-b from-slate-100 to-slate-200",
-    base: "w-full px-5 py-3 border",
+    base: "w-full px-5 py-2 md:py-3 border",
   };
   return (
     <div className={`flex flex-col ${className ? className : ""}`}>
@@ -34,7 +34,7 @@ const Block: FC<BlockProps> = ({
           welcome ? variants.welcome : variants.notWelcome
         }`}
       >
-        <h2 className="text-center text-[22px] font-medium capitalize text-primary">
+        <h2 className="text-center text-lg font-medium capitalize text-primary md:text-[22px]">
           {title}
         </h2>
       </div>
@@ -50,7 +50,9 @@ const Block: FC<BlockProps> = ({
         </p>
         {!welcome && (
           <div className="flex items-center justify-center">
-            <Button onClick={onClick} beginEntry={beginEntry}>{btnText}</Button>
+            <Button onClick={onClick} beginEntry={beginEntry}>
+              {btnText}
+            </Button>
           </div>
         )}
       </div>
