@@ -18,3 +18,6 @@ export { default as Form } from "./Application/Form";
 
 // News exports
 export { default as News } from "./News/News";
+
+// Faq exports
+export { default as Faq } from "./Faq/Faq";

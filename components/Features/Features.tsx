@@ -13,7 +13,7 @@ const Features = () => {
         <h2 role="heading" className="title mb-5 md:mb-9">
           {t("title")}
         </h2>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:gap-5">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:gap-7">
           <FeaturesCard
             Icon={<LuCalendarClock className="h-8 w-8 text-red-500" />}
             title={t("Card1.title")}
