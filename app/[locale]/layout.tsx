@@ -35,9 +35,9 @@ export async function generateMetadata({
   const t = createTranslator({ locale, messages });
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
   return {
-    title: t("Layout.title", { defaultValue: "Greencard" }),
-    description: t("Layout.description", { defaultValue: "Description" }),
-    abstract: t("Layout.description", { defaultValue: "Description" }),
+    title: t("Layout.title"),
+    description: t("Layout.description"),
+    abstract: t("Layout.description"),
     alternates: {
       canonical: new URL(`${BASE_URL}`),
       languages: {
@@ -93,8 +93,8 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      title: t("title"),
-      description: t("description"),
+      title: t("Layout.title"),
+      description: t("Layout.description"),
       countryName: "Uzbekistan",
       emails: meta.emails,
       faxNumbers: meta.faxNumbers,
