@@ -1,9 +1,9 @@
-import { BottomFixed } from "@/components";
+import { BottomFixed, News } from "@/components";
 
 export default function NewsPage() {
   return (
     <>
-      <p>ServicePage</p>
+      <News />
       <BottomFixed />
     </>
   );

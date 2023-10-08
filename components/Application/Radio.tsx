@@ -18,7 +18,7 @@ const Radio: FC<RadioProps> = ({ label, value, checked, onChange, Icon }) => {
   };
 
   return (
-    <div className="flex items-center space-x-2 border px-5 py-2 checked:border-blue-500 checked:ring-1 checked:ring-blue-500 hover:border-blue-500 hover:ring-1 focus:border-blue-500 focus:ring-1">
+    <div className="flex items-center space-x-2 border px-5 py-1 checked:border-blue-500 checked:ring-1 checked:ring-blue-500 hover:border-blue-500 hover:ring-1 focus:border-blue-500 focus:ring-1">
       <input
         type="radio"
         id={`radio-${value}`}
