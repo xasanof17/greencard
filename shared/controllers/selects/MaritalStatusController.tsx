@@ -21,7 +21,7 @@ const FormMaritalStatusController: FC<FormMaritalStatusControllerProps> = ({
         name=""
         control={control}
         render={({field}) => (
-          <Select value="" {...field}>
+          <Select {...field}>
             <SelectItem value="">Oliy ma&apos;lumot</SelectItem>
             <SelectItem value="">Oliy ma&apos;lumot</SelectItem>
           </Select>
