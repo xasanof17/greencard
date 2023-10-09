@@ -1,13 +1,16 @@
 "use client";
 import clsx from "clsx";
 import { DetailedHTMLProps, FC, InputHTMLAttributes } from "react";
+import { Control, Controller } from "react-hook-form";
 
 type TextInputControllerProps = {
   label: string;
+  control: Control<any>;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 const TextInputController: FC<TextInputControllerProps> = ({
   label,
+  control,
   ...props
 }) => {
   const errors = false;
@@ -24,13 +27,20 @@ const TextInputController: FC<TextInputControllerProps> = ({
       <label htmlFor="" className="label">
         {label}
       </label>
-      <input
-        type="text"
-        className={clsx(
-          variants.baseInput,
-          errors ? variants.error : variants.complate,
+      <Controller
+        name=""
+        control={control}
+        render={(fields) => (
+          <input
+            {...fields}
+            type="text"
+            className={clsx(
+              variants.baseInput,
+              errors ? variants.error : variants.complate,
+            )}
+            {...props}
+          />
         )}
-        {...props}
       />
     </div>
   );

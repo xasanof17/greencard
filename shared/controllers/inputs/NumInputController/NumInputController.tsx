@@ -1,13 +1,16 @@
 "use client";
 import clsx from "clsx";
 import { DetailedHTMLProps, FC, InputHTMLAttributes } from "react";
+import { Control, Controller } from "react-hook-form";
 
 type NumInputControllerProps = {
   className?: string;
+  control: Control<any>;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 const NumInputController: FC<NumInputControllerProps> = ({
   className,
+  control,
   ...props
 }) => {
   const errors = false;
@@ -20,15 +23,24 @@ const NumInputController: FC<NumInputControllerProps> = ({
       "border-red-500 hover:border-red-500  focus:border-red-500 text-red-500",
   };
   return (
-    <input
-      type="number"
-      className={clsx(
-        className ? className : "",
-        variants.baseInput,
-        errors ? variants.error : variants.complate,
-      )}
-      {...props}
-    />
+    <>
+      <Controller
+        name=""
+        control={control}
+        render={(fields) => (
+          <input
+            {...fields}
+            type="number"
+            className={clsx(
+              className ? className : "",
+              variants.baseInput,
+              errors ? variants.error : variants.complate,
+            )}
+            {...props}
+          />
+        )}
+      />
+    </>
   );
 };
 

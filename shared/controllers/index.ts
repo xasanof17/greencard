@@ -3,5 +3,6 @@ export { default as NumInputController } from "./inputs/NumInputController/NumIn
 export { default as RadioInputController } from "./inputs/RadioInputController/RadioInputController";
 
 // Select Exports
+export { default as CountrySelectController } from "./selects/CountrySelectController/CountrySelectController";
 export { default as MonthInputController } from "./selects/MonthSelectController/MonthSelectController";
 export { default as YearInputController } from "./selects/YearSelectController/YearSelectController";

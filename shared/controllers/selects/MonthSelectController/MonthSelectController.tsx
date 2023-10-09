@@ -1,33 +1,37 @@
 "use client";
+import { SearchSelect, SearchSelectItem } from "@tremor/react";
 import clsx from "clsx";
 import { DetailedHTMLProps, FC, SelectHTMLAttributes } from "react";
+import { Control, Controller } from "react-hook-form";
 
-type MonthSelectControllerProps = {} & DetailedHTMLProps<
+type MonthSelectControllerProps = {
+  control: Control<any>;
+} & DetailedHTMLProps<
   SelectHTMLAttributes<HTMLSelectElement>,
   HTMLSelectElement
 >;
 
-const MonthSelectController: FC<MonthSelectControllerProps> = ({ ...props }) => {
-  const errors = false;
-
-  const variants = {
-    baseInput:
-      "w-full rounded-md border-2 px-2 py-[6px] text-base font-medium uppercase outline-none sm:py-1 hover:ring-1 focus:ring-1",
-    complate: "hover:border-blue-500  focus:border-blue-500 text-black",
-    error:
-      "border-red-500 hover:border-red-500  focus:border-red-500 text-red-500",
-  };
+const MonthSelectController: FC<MonthSelectControllerProps> = ({
+  control,
+  ...props
+}) => {
   return (
     <div className="flex w-full flex-col sm:max-w-xs">
-      <select
-        className={clsx(
-          variants.baseInput,
-          errors ? variants.error : variants.complate,
+      <Controller
+        name=""
+        control={control}
+        render={(fields) => (
+          <SearchSelect
+            {...fields}
+            value={"value"}
+            defaultValue="Uzbekistan"
+            className="!hover:border-blue-500 !focus:border-blue-500 !text-base !font-medium uppercase !text-black"
+          >
+            <SearchSelectItem value="uzbekistan">uzbekistan</SearchSelectItem>
+            <SearchSelectItem value="uzbekistan">america</SearchSelectItem>
+          </SearchSelect>
         )}
-        {...props}
-      >
-        <option value="">Avgust</option>
-      </select>
+      />
     </div>
   );
 };

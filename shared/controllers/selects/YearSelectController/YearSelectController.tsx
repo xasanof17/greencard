@@ -1,33 +1,30 @@
 "use client";
-import clsx from "clsx";
-import { DetailedHTMLProps, FC, SelectHTMLAttributes } from "react";
+import { FC } from "react";
+import { SearchSelect, SearchSelectItem } from "@tremor/react";
+import { Control, Controller } from "react-hook-form";
 
-type YearSelectControllerProps = {} & DetailedHTMLProps<
-  SelectHTMLAttributes<HTMLSelectElement>,
-  HTMLSelectElement
->;
+type YearSelectControllerProps = {
+  control: Control<any>;
+};
 
-const YearSelectController: FC<YearSelectControllerProps> = ({ ...props }) => {
-  const errors = false;
-
-  const variants = {
-    baseInput:
-      "w-full rounded-md border-2 px-2 py-[6px] text-base font-medium uppercase outline-none sm:py-1 hover:ring-1 focus:ring-1",
-    complate: "hover:border-blue-500  focus:border-blue-500 text-black",
-    error:
-      "border-red-500 hover:border-red-500  focus:border-red-500 text-red-500",
-  };
+const YearSelectController: FC<YearSelectControllerProps> = ({ control }) => {
   return (
     <div className="flex w-full flex-col sm:max-w-xs">
-      <select
-        className={clsx(
-          variants.baseInput,
-          errors ? variants.error : variants.complate,
+      <Controller
+        name=""
+        control={control}
+        render={(fields) => (
+          <SearchSelect
+            {...fields}
+            value={"value"}
+            defaultValue="Uzbekistan"
+            className="!hover:border-blue-500 !focus:border-blue-500 !text-base !font-medium uppercase !text-black"
+          >
+            <SearchSelectItem value="uzbekistan">2000</SearchSelectItem>
+            <SearchSelectItem value="uzbekistan">2001</SearchSelectItem>
+          </SearchSelect>
         )}
-        {...props}
-      >
-        <option value="">2007</option>
-      </select>
+      />
     </div>
   );
 };

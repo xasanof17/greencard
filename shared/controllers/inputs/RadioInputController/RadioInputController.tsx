@@ -1,5 +1,6 @@
 "use client";
 import { FC } from "react";
+import { Control, Controller } from "react-hook-form";
 import { IconType } from "react-icons";
 
 type RadioInputControllerProps = {
@@ -8,6 +9,7 @@ type RadioInputControllerProps = {
   checked: boolean;
   onChange: (value: string) => void;
   Icon: IconType;
+  control: Control<any>;
 };
 
 const RadioInputController: FC<RadioInputControllerProps> = ({
@@ -16,6 +18,7 @@ const RadioInputController: FC<RadioInputControllerProps> = ({
   checked,
   onChange,
   Icon,
+  control,
 }) => {
   const handleChange = () => {
     if (!checked) {
@@ -25,14 +28,21 @@ const RadioInputController: FC<RadioInputControllerProps> = ({
 
   return (
     <div className="flex items-center space-x-2 border px-5 py-1 checked:border-blue-500 checked:ring-1 checked:ring-blue-500 hover:border-blue-500 hover:ring-1 focus:border-blue-500 focus:ring-1">
-      <input
-        type="radio"
-        id={`radio-${value}`}
-        name="gender"
-        value={value}
-        checked={checked}
-        onChange={handleChange}
-        className="h-4 w-4 text-primary"
+      <Controller
+        name=""
+        control={control}
+        render={(fields) => (
+          <input
+            {...fields}
+            type="radio"
+            id={`radio-${value}`}
+            name="gender"
+            value={value}
+            checked={checked}
+            onChange={handleChange}
+            className="h-4 w-4 text-primary"
+          />
+        )}
       />
       <div className="flex items-center">
         <Icon className="h-6 w-6" />

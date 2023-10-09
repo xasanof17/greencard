@@ -1,7 +1,5 @@
 "use client";
 import { FC, useState } from "react";
-import Input from "../Application/Input";
-import Radio from "../Application/Radio";
 import { IoIosMan, IoIosWoman } from "react-icons/io";
 import {
   MonthInputController,
@@ -9,8 +7,9 @@ import {
   RadioInputController,
   TextInputController,
   YearInputController,
+  CountrySelectController,
 } from "@/shared/controllers";
-import CountrySelectController from "@/shared/controllers/selects/CountrySelectController/CountrySelectController";
+import { useFormContext } from "react-hook-form";
 import FormHeader from "./FormHeader";
 
 type FormProps = {
@@ -19,7 +18,7 @@ type FormProps = {
 
 const Form: FC<FormProps> = ({ title }) => {
   const [selectedGender, setSelectedGender] = useState<string>("");
-
+  const { control } = useFormContext();
   const handleGenderChange = (value: string) => {
     setSelectedGender(value);
   };
@@ -31,10 +30,12 @@ const Form: FC<FormProps> = ({ title }) => {
           <TextInputController
             label="Familiyangiz (Ingliz tilida)"
             placeholder="Familiyangiz"
+            control={control}
           />
           <TextInputController
             label="Ismingiz (Ingliz tilida)"
             placeholder="Ismingiz"
+            control={control}
           />
         </div>
         <div className="flex flex-col items-start space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
@@ -46,6 +47,7 @@ const Form: FC<FormProps> = ({ title }) => {
               <RadioInputController
                 label="Man"
                 value="man"
+                control={control}
                 checked={selectedGender === "man"}
                 onChange={handleGenderChange}
                 Icon={IoIosMan}
@@ -53,6 +55,7 @@ const Form: FC<FormProps> = ({ title }) => {
               <RadioInputController
                 label="Woman"
                 value="woman"
+                control={control}
                 checked={selectedGender === "woman"}
                 onChange={handleGenderChange}
                 Icon={IoIosWoman}
@@ -64,16 +67,16 @@ const Form: FC<FormProps> = ({ title }) => {
               Tug&apos;ilgan kuningiz
             </label>
             <div className="flex items-center space-x-2">
-              <NumInputController className="w-10" />
-              <MonthInputController />
-              <YearInputController />
+              <NumInputController className="w-10" control={control} />
+              <MonthInputController control={control} />
+              <YearInputController control={control} />
             </div>
           </div>
         </div>
         <div className="flex flex-col items-start space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-          <CountrySelectController label="Davlatingiz" />
-          <CountrySelectController label="Viloyatingiz" />
-          <CountrySelectController label="Tumaningiz" />
+          <CountrySelectController label="Davlatingiz" control={control} />
+          <CountrySelectController label="Viloyatingiz" control={control} />
+          <CountrySelectController label="Tumaningiz" control={control} />
         </div>
       </div>
     </div>

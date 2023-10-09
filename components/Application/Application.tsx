@@ -7,9 +7,19 @@ import {
   ResidenceAddressForm,
 } from "@/components";
 import { useTranslations } from "next-intl";
+import { FormProvider, useForm } from "react-hook-form";
 
 const Application = () => {
   const t = useTranslations("Application");
+  const methods = useForm({
+    defaultValues: {
+      firstName: "",
+      countryName: "",
+    },
+  });
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
   return (
     <section
       id="application"
@@ -19,11 +29,13 @@ const Application = () => {
       <h1 className="title">{t("title")}</h1>
       <Timer />
       <Note />
-      <form className="my-10">
-        <PersonalDataForm title="Shaxsiy ma'lumotlar" />
-        <PicturePlacementForm title="Rasm joylashtirish" />
-        <ResidenceAddressForm title="Yashash manzili" />
-      </form>
+      <FormProvider {...methods}>
+        <form className="my-10" onSubmit={methods.handleSubmit(onSubmit)}>
+          <PersonalDataForm title="Shaxsiy ma'lumotlar" />
+          <PicturePlacementForm title="Rasm joylashtirish" />
+          <ResidenceAddressForm title="Yashash manzili" />
+        </form>
+      </FormProvider>
     </section>
   );
 };
