@@ -2,9 +2,9 @@
 export { default as FormWelcome } from "./Form/FormWelcome";
 export { default as FormBlock } from "./Form/FormBlock";
 export { default as FormPolicy } from "./Form/FormPolicy";
-export { default as PersonalDataForm } from "./Form/PersonalDataForm";
-export { default as PicturePlacementForm } from "./Form/PicturePlacementForm";
-export { default as ResidenceAddressForm } from "./Form/ResidenceAddressForm";
+export { default as FormPersonalData } from "./Form/FormPersonalData";
+export { default as FormPicturePlacement } from "./Form/FormPicturePlacement";
+export { default as FormResidenceAddress } from "./Form/FormResidenceAddress";
 
 // Other components exports
 export { default as Banner } from "./Banner";

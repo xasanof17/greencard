@@ -1,4 +1,4 @@
-import { Banner, BottomFixed, Faq, Features, News } from "@/components";
+import { Banner, Faq, Features, News } from "@/components";
 
 export default function Home() {
   return (
@@ -7,7 +7,6 @@ export default function Home() {
       <Features />
       <News title />
       <Faq />
-      <BottomFixed />
     </>
   );
 }

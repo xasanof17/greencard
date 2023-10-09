@@ -11,12 +11,13 @@ import {
 } from "@/shared/controllers";
 import { useFormContext } from "react-hook-form";
 import FormHeader from "./FormHeader";
+import FormBody from "./FormBody";
 
-type FormProps = {
+type FormPersonalDataProps = {
   title: string;
 };
 
-const Form: FC<FormProps> = ({ title }) => {
+const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
   const [selectedGender, setSelectedGender] = useState<string>("");
   const { control } = useFormContext();
   const handleGenderChange = (value: string) => {
@@ -25,17 +26,19 @@ const Form: FC<FormProps> = ({ title }) => {
   return (
     <div className="my-10 flex flex-col">
       <FormHeader title={title} />
-      <div className="flex flex-col space-y-5 border px-3 py-6 sm:p-3 md:px-5 md:py-5">
+      <FormBody className="flex flex-col space-y-5 border px-3 py-6 sm:p-3 md:px-5 md:py-5">
         <div className="flex flex-col justify-start space-y-4 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0">
           <TextInputController
             label="Familiyangiz (Ingliz tilida)"
             placeholder="Familiyangiz"
             control={control}
+            className="sm:max-w-xs"
           />
           <TextInputController
             label="Ismingiz (Ingliz tilida)"
             placeholder="Ismingiz"
             control={control}
+            className="sm:max-w-xs"
           />
         </div>
         <div className="flex flex-col items-start space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
@@ -78,9 +81,9 @@ const Form: FC<FormProps> = ({ title }) => {
           <CountrySelectController label="Viloyatingiz" control={control} />
           <CountrySelectController label="Tumaningiz" control={control} />
         </div>
-      </div>
+      </FormBody>
     </div>
   );
 };
 
-export default Form;
+export default FormPersonalData;

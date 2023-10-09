@@ -1,20 +1,72 @@
 "use client";
 import {
-  PersonalDataForm,
   Note,
   Timer,
-  PicturePlacementForm,
-  ResidenceAddressForm,
+  FormPersonalData,
+  FormPicturePlacement,
+  FormResidenceAddress,
 } from "@/components";
 import { useTranslations } from "next-intl";
 import { FormProvider, useForm } from "react-hook-form";
+import FormEducationLevel from "../Form/FormEducationLevel";
 
 const Application = () => {
   const t = useTranslations("Application");
   const methods = useForm({
     defaultValues: {
       firstName: "",
-      countryName: "",
+      lastName: "",
+      gender: "",
+      dateOfBirth: {
+        day: 1,
+        month: "September",
+        year: 1960,
+      },
+      placeOfBirth: {
+        stateName: "Uzbekistan",
+        regionName: "Tashkent",
+        districtName: "Chilanzar",
+      },
+      dataOfPassport: {
+        series: "",
+        givenDate: {
+          day: 1,
+          month: "January",
+          year: 1960,
+        },
+      },
+      img: "",
+      residenceAddress: {
+        stateName: "Uzbekistan",
+        regionName: "Tashkent",
+        districtName: "Chilanzar",
+        addressLine: "",
+        phoneNumber: "",
+      },
+      educationLevel: {
+        level: "Oliy ma'lumot",
+      },
+      maritalStatus: {
+        status: "Uylangan",
+        children: [
+          {
+            firstName: "",
+            lastName: "",
+            gender: "",
+            img: "",
+            dateOfBirth: {
+              day: 1,
+              month: "January",
+              year: 2001,
+            },
+            placeOfBirth: {
+              stateName: "Uzbekistan",
+              regionName: "Tashkent",
+              districtName: "Chilanzar",
+            },
+          },
+        ],
+      },
     },
   });
   const onSubmit = (data: any) => {
@@ -31,9 +83,10 @@ const Application = () => {
       <Note />
       <FormProvider {...methods}>
         <form className="my-10" onSubmit={methods.handleSubmit(onSubmit)}>
-          <PersonalDataForm title="Shaxsiy ma'lumotlar" />
-          <PicturePlacementForm title="Rasm joylashtirish" />
-          <ResidenceAddressForm title="Yashash manzili" />
+          <FormPersonalData title="Shaxsiy ma'lumotlar" />
+          <FormPicturePlacement title="Rasm joylashtirish" />
+          <FormResidenceAddress title="Yashash manzili" />
+          <FormEducationLevel title="O'quv ma'lumotingiz" />
         </form>
       </FormProvider>
     </section>

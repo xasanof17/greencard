@@ -1,13 +1,16 @@
+"use client";
 import { FC } from "react";
+import { Control, useFormContext } from "react-hook-form";
 import FormHeader from "./FormHeader";
 import FormBody from "./FormBody";
 import Image from "next/image";
 
-type PicturePlacementProps = {
+type FormPicturePlacementProps = {
   title: string;
 };
 
-const PicturePlacementForm: FC<PicturePlacementProps> = ({ title }) => {
+const PicturePlacementForm: FC<FormPicturePlacementProps> = ({ title }) => {
+  const { control } = useFormContext();
   return (
     <div className="my-10 flex flex-col">
       <FormHeader title={title} />

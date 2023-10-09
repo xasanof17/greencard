@@ -6,11 +6,13 @@ import { Control, Controller } from "react-hook-form";
 type TextInputControllerProps = {
   label: string;
   control: Control<any>;
+  className?: string;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 const TextInputController: FC<TextInputControllerProps> = ({
   label,
   control,
+  className,
   ...props
 }) => {
   const errors = false;
@@ -23,7 +25,7 @@ const TextInputController: FC<TextInputControllerProps> = ({
       "border-red-500 hover:border-red-500  focus:border-red-500 text-red-500",
   };
   return (
-    <div className="flex w-full flex-col sm:max-w-xs">
+    <div className={clsx(className, "flex w-full flex-col")}>
       <label htmlFor="" className="label">
         {label}
       </label>
