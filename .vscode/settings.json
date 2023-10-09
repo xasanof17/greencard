@@ -1,0 +1,8 @@
+{
+  "material-icon-theme.folders.associations": {
+    "redux": "./extensions/icons/redux.svg"
+  },
+  "material-icon-theme.files.associations": {
+    "redux": "./extensions/icons/redux.svg"
+  }
+}
