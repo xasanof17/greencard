@@ -1,9 +1,9 @@
 import { Button } from "@/shared/ui";
-import React, { FC } from "react";
+import { FC } from "react";
 import FormHeader from "./FormHeader";
 import FormBody from "./FormBody";
 
-type BlockProps = {
+type FormBlockProps = {
   welcome?: boolean;
   title: string;
   text: string;
@@ -13,7 +13,7 @@ type BlockProps = {
   onClick?: () => void;
 };
 
-const Block: FC<BlockProps> = ({
+const FormBlock: FC<FormBlockProps> = ({
   welcome,
   title,
   text,
@@ -41,4 +41,4 @@ const Block: FC<BlockProps> = ({
   );
 };
 
-export default Block;
+export default FormBlock;

@@ -1,9 +1,11 @@
-type FormPolicy = {
+import { FC } from "react";
+
+type FormPolicyProps = {
   title: string;
   text: string;
 };
 
-const FormPolicy = ({ title, text }: FormPolicy) => {
+const FormPolicy: FC<FormPolicyProps> = ({ title, text }) => {
   return (
     <div className="mb-5 inline-block">
       <p className="text-base font-normal leading-5 tracking-wide text-[#333]">

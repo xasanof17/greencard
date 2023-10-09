@@ -1,6 +1,6 @@
 "use client";
 import { FC } from "react";
-import { Control, useFormContext } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import FormHeader from "./FormHeader";
 import FormBody from "./FormBody";
 import Image from "next/image";

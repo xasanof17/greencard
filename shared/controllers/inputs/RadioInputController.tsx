@@ -31,9 +31,9 @@ const RadioInputController: FC<RadioInputControllerProps> = ({
       <Controller
         name=""
         control={control}
-        render={(fields) => (
+        render={({field}) => (
           <input
-            {...fields}
+            {...field}
             type="radio"
             id={`radio-${value}`}
             name="gender"

@@ -1,3 +1,4 @@
+import { FC } from "react";
 import clsx from "clsx";
 
 type FormHeaderProps = {
@@ -6,7 +7,7 @@ type FormHeaderProps = {
   welcome?: boolean;
 };
 
-const FormHeader = ({ title, className, welcome }: FormHeaderProps) => {
+const FormHeader: FC<FormHeaderProps> = ({ title, className, welcome }) => {
   const variants = {
     base: "flex w-full items-center justify-center rounded-t-md border px-5 py-2 md:py-3",
     notWelcome: "border-slate-300 bg-gradient-to-b from-slate-100 to-slate-200",

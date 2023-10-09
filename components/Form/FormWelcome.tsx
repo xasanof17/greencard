@@ -1,3 +1,4 @@
+import { FC } from "react";
 import FormBlock from "./FormBlock";
 
 type FormWelcomeProps = {
@@ -6,7 +7,7 @@ type FormWelcomeProps = {
   text: string;
 };
 
-const FormWelcome = ({ heading, title, text }: FormWelcomeProps) => {
+const FormWelcome: FC<FormWelcomeProps> = ({ heading, title, text }) => {
   return (
     <div className="flex flex-col">
       <h1 role="heading" className="title mb-3">

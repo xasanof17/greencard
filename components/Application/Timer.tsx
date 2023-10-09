@@ -42,7 +42,7 @@ const Timer: FC = () => {
             src="/assets/department_state.png"
             alt="logo"
             fill
-            sizes="(min-width: 280px) 100vw"
+            sizes="100vw"
           />
         </div>
         <div className="flex flex-col space-y-2 sm:space-y-0">

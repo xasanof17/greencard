@@ -19,6 +19,6 @@
     @apply text-center text-[19px] font-bold text-primary md:text-2xl;
   }
   .label {
-    @apply mb-1 ml-1 text-xs font-medium uppercase;
+    @apply mb-1 ml-1 text-xs font-semibold uppercase text-primary;
   }
 }

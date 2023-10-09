@@ -1,5 +1,4 @@
 "use client";
-import clsx from "clsx";
 import { DetailedHTMLProps, FC, SelectHTMLAttributes } from "react";
 import { SearchSelect, SearchSelectItem, SelectItem } from "@tremor/react";
 import { Control, Controller } from "react-hook-form";
@@ -25,9 +24,9 @@ const CountrySelectController: FC<CountrySelectControllerProps> = ({
       <Controller
         name=""
         control={control}
-        render={(fields) => (
+        render={({field}) => (
           <SearchSelect
-            {...fields}
+            {...field}
             value={"value"}
             defaultValue="Uzbekistan"
             className="!hover:border-blue-500 !focus:border-blue-500 !text-base !font-medium uppercase !text-black"

@@ -1,8 +1,12 @@
-export { default as TextInputController } from "./inputs/TextInputController/TextInputController";
-export { default as NumInputController } from "./inputs/NumInputController/NumInputController";
-export { default as RadioInputController } from "./inputs/RadioInputController/RadioInputController";
+// Inputs exports
+export { default as TextInputController } from "./inputs/TextInputController";
+export { default as NumInputController } from "./inputs/NumInputController";
+export { default as RadioInputController } from "./inputs/RadioInputController";
+export { default as AddChildInputController } from "./inputs/AddChildInputController";
 
-// Select Exports
-export { default as CountrySelectController } from "./selects/CountrySelectController/CountrySelectController";
-export { default as MonthInputController } from "./selects/MonthSelectController/MonthSelectController";
-export { default as YearInputController } from "./selects/YearSelectController/YearSelectController";
+// Selects exports
+export { default as CountrySelectController } from "./selects/CountrySelectController";
+export { default as MonthInputController } from "./selects/MonthSelectController";
+export { default as YearInputController } from "./selects/YearSelectController";
+export { default as EducationLevelController } from "./selects/EducationLevelController";
+export { default as MaritalStatusController } from "./selects/MaritalStatusController";

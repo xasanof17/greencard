@@ -27,9 +27,9 @@ const NumInputController: FC<NumInputControllerProps> = ({
       <Controller
         name=""
         control={control}
-        render={(fields) => (
+        render={({field}) => (
           <input
-            {...fields}
+            {...field}
             type="number"
             className={clsx(
               className ? className : "",

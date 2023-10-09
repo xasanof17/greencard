@@ -5,6 +5,7 @@ import {
   FormPersonalData,
   FormPicturePlacement,
   FormResidenceAddress,
+  FormMaritalStatus,
 } from "@/components";
 import { useTranslations } from "next-intl";
 import { FormProvider, useForm } from "react-hook-form";
@@ -87,6 +88,7 @@ const Application = () => {
           <FormPicturePlacement title="Rasm joylashtirish" />
           <FormResidenceAddress title="Yashash manzili" />
           <FormEducationLevel title="O'quv ma'lumotingiz" />
+          <FormMaritalStatus title="Oilaviy sharoitingiz" />
         </form>
       </FormProvider>
     </section>

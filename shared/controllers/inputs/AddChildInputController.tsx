@@ -1,18 +1,16 @@
 "use client";
-import clsx from "clsx";
 import { DetailedHTMLProps, FC, InputHTMLAttributes } from "react";
 import { Control, Controller } from "react-hook-form";
+import clsx from "clsx";
 
-type TextInputControllerProps = {
-  label: string;
+type AddChildInputControllerProps = {
+  title: string;
   control: Control<any>;
-  className?: string;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
-const TextInputController: FC<TextInputControllerProps> = ({
-  label,
+const AddChildInputController: FC<AddChildInputControllerProps> = ({
+  title,
   control,
-  className,
   ...props
 }) => {
   const errors = false;
@@ -25,16 +23,16 @@ const TextInputController: FC<TextInputControllerProps> = ({
       "border-red-500 hover:border-red-500  focus:border-red-500 text-red-500",
   };
   return (
-    <div className={clsx(className, "flex w-full flex-col")}>
+    <div className="sm:max-w-sm">
       <label htmlFor="" className="label">
-        {label}
+        {title}
       </label>
       <Controller
         name=""
         control={control}
-        render={(fields) => (
+        render={({field}) => (
           <input
-            {...fields}
+            {...field}
             type="text"
             className={clsx(
               variants.baseInput,
@@ -48,4 +46,4 @@ const TextInputController: FC<TextInputControllerProps> = ({
   );
 };
 
-export default TextInputController;
+export default AddChildInputController;

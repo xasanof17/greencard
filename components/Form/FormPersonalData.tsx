@@ -26,7 +26,7 @@ const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
   return (
     <div className="my-10 flex flex-col">
       <FormHeader title={title} />
-      <FormBody className="flex flex-col space-y-5 border px-3 py-6 sm:p-3 md:px-5 md:py-5">
+      <FormBody className="flex flex-col space-y-5 border px-3 py-6 sm:p-3 md:px-5 md:py-10">
         <div className="flex flex-col justify-start space-y-4 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0">
           <TextInputController
             label="Familiyangiz (Ingliz tilida)"
