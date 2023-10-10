@@ -4,12 +4,12 @@ import { Control, Controller } from "react-hook-form";
 import { IconType } from "react-icons";
 
 type RadioInputControllerProps = {
-  label: string;
-  value: string;
-  checked: boolean;
-  onChange: (value: string) => void;
+  label?: string;
+  value?: string;
+  checked?: boolean;
+  onChange?: (value: string) => void;
   Icon: IconType;
-  control: Control<any>;
+  control?: Control<any>;
 };
 
 const RadioInputController: FC<RadioInputControllerProps> = ({
@@ -22,7 +22,7 @@ const RadioInputController: FC<RadioInputControllerProps> = ({
 }) => {
   const handleChange = () => {
     if (!checked) {
-      onChange(value);
+      // onChange(value);
     }
   };
 

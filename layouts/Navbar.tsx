@@ -42,7 +42,7 @@ const Navbar = () => {
     },
   ];
   return (
-    <header className="sticky left-0 top-0 z-50 w-full bg-white shadow-md">
+    <header className="sticky top-0 inset-x-0 z-50 w-full max-w-full bg-white shadow-md">
       <nav className="container flex items-center justify-between py-3">
         <Link
           href="/"

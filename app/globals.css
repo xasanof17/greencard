@@ -3,6 +3,23 @@
 @tailwind utilities;
 
 @layer base {
+  /* WebKit (Chrome, Safari) */
+  *::-webkit-scrollbar {
+    width: 8px; /* Adjust the width */
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #3498db; /* Thumb color */
+    border-radius: 6px; /* Rounded corners for the thumb */
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #2980b9; /* Hover effect for the thumb */
+  }
+
+  *::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Track background color */
+  }
 }
 
 @layer components {

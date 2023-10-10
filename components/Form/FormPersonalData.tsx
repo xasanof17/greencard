@@ -47,7 +47,7 @@ const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
               Jinsingiz
             </label>
             <div className="grid w-full grid-cols-2 items-center space-x-4 sm:max-w-xs">
-              <RadioInputController
+              {/* <RadioInputController
                 label="Man"
                 value="man"
                 control={control}
@@ -62,7 +62,7 @@ const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
                 checked={selectedGender === "woman"}
                 onChange={handleGenderChange}
                 Icon={IoIosWoman}
-              />
+              /> */}
             </div>
           </div>
           <div className="flex flex-col">

@@ -9,13 +9,11 @@ import clsx from "clsx";
 type AddChildInputControllerProps = {
   title: string;
   control: Control<any>;
-  className?: string;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 const AddChildInputController: FC<AddChildInputControllerProps> = ({
   title,
   control,
-  className,
   ...props
 }) => {
   const variants = {

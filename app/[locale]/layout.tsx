@@ -57,8 +57,8 @@ export async function generateMetadata({
     },
     icons: {
       shortcut: `/favicon.ico`,
-      icon: `/icon.png`,
-      apple: `/icon.png`,
+      icon: `/favicon.ico`,
+      apple: `/favicon.ico`,
     },
     manifest: new URL(`${BASE_URL}/manifest.webmanifest`),
     publisher: "Vercel",
@@ -68,13 +68,10 @@ export async function generateMetadata({
     robots: {
       index: true,
       follow: true,
-      nocache: true,
       googleBot: {
         index: true,
         follow: true,
-        "max-video-preview": -1,
         "max-image-preview": "large",
-        "max-snippet": -1,
       },
     },
     openGraph: {
@@ -89,7 +86,7 @@ export async function generateMetadata({
       phoneNumbers: meta.faxNumbers,
       images: [
         {
-          url: `${BASE_URL}/opengraph-image.jpg`,
+          url: `/opengraph-image.jpg`,
           width: 1920,
           height: 1080,
           type: "image/jpeg",
