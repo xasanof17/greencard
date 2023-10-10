@@ -7,15 +7,19 @@ import clsx from "clsx";
 import Image from "next/image";
 
 type BannerProps = {
+  title: string;
+  text?: string;
   className?: string;
+  height?: string;
 };
 
-const Banner = ({ className }: BannerProps) => {
+const Banner = ({ title, text, height, className }: BannerProps) => {
   const router = useRouter();
-  const t = useTranslations("Banner");
   const locale = useLocale();
 
   const variants = {
+    defaultBanner:
+      "grid min-h-[250px] grid-cols-2 overflow-hidden rounded-xl sm:min-h-[300px] md:min-h-[400px]",
     baseHeading:
       "leading-12 w-full text-xl font-bold tracking-wide text-white md:text-4xl xl:text-white",
     uz: locale == "uz" && "",
@@ -24,11 +28,11 @@ const Banner = ({ className }: BannerProps) => {
   };
 
   return (
-    <section role="banner" className="py-10 xl:py-20">
+    <section role="banner" className={className ? className : "py-10 xl:py-20"}>
       <div
-        className={`${
-          className ? className : ""
-        } container relative grid min-h-[250px] grid-cols-2 overflow-hidden rounded-xl sm:min-h-[300px] md:min-h-[400px]`}
+        className={`container relative rounded-xl ${
+          height ? height : variants.defaultBanner
+        }`}
       >
         <Image
           src="/assets/banner.jpg"
@@ -46,13 +50,16 @@ const Banner = ({ className }: BannerProps) => {
                 variants.uz,
                 variants.en,
                 variants.ru,
+                height && "mb-4",
               )}
             >
-              {t("title")}
+              {title}
             </h1>
-            <p className="my-4 text-base text-white md:my-6 md:text-lg xl:text-xl xl:text-white">
-              {t("text")}
-            </p>
+            {text && (
+              <p className="my-4 text-base text-white md:my-6 md:text-lg xl:text-xl xl:text-white">
+                {text}
+              </p>
+            )}
             <div className="inline-block">
               <Button onClick={() => router.replace("/form")} />
             </div>

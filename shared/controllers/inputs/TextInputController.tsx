@@ -5,12 +5,14 @@ import { Control, Controller } from "react-hook-form";
 
 type TextInputControllerProps = {
   label: string;
+  name: string;
   control: Control<any>;
   className?: string;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 const TextInputController: FC<TextInputControllerProps> = ({
   label,
+  name,
   control,
   className,
   ...props
@@ -30,7 +32,7 @@ const TextInputController: FC<TextInputControllerProps> = ({
         {label}
       </label>
       <Controller
-        name=""
+        name={name}
         control={control}
         render={({ field }) => (
           <input

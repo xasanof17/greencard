@@ -1,10 +1,8 @@
 "use client";
-import { FC, useState } from "react";
-import { IoIosMan, IoIosWoman } from "react-icons/io";
+import { FC } from "react";
 import {
   MonthInputController,
   NumInputController,
-  RadioInputController,
   TextInputController,
   YearInputController,
   CountrySelectController,
@@ -12,32 +10,32 @@ import {
 import { useFormContext } from "react-hook-form";
 import FormHeader from "./FormHeader";
 import FormBody from "./FormBody";
+import GenderRadios from "./GenderRadios";
 
 type FormPersonalDataProps = {
   title: string;
 };
 
 const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
-  const [selectedGender, setSelectedGender] = useState<string>("");
-  const { control } = useFormContext();
-  const handleGenderChange = (value: string) => {
-    setSelectedGender(value);
-  };
+  const { control } = useFormContext<FormDataType>();
+
   return (
     <div className="my-10 flex flex-col">
       <FormHeader title={title} />
       <FormBody className="flex flex-col space-y-5 border px-3 py-6 sm:p-3 md:px-5 md:py-10">
         <div className="flex flex-col justify-start space-y-4 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0">
           <TextInputController
+            name="firstName"
+            control={control}
             label="Familiyangiz (Ingliz tilida)"
             placeholder="Familiyangiz"
-            control={control}
             className="sm:max-w-xs"
           />
           <TextInputController
+            name="lastName"
+            control={control}
             label="Ismingiz (Ingliz tilida)"
             placeholder="Ismingiz"
-            control={control}
             className="sm:max-w-xs"
           />
         </div>
@@ -47,22 +45,7 @@ const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
               Jinsingiz
             </label>
             <div className="grid w-full grid-cols-2 items-center space-x-4 sm:max-w-xs">
-              {/* <RadioInputController
-                label="Man"
-                value="man"
-                control={control}
-                checked={selectedGender === "man"}
-                onChange={handleGenderChange}
-                Icon={IoIosMan}
-              />
-              <RadioInputController
-                label="Woman"
-                value="woman"
-                control={control}
-                checked={selectedGender === "woman"}
-                onChange={handleGenderChange}
-                Icon={IoIosWoman}
-              /> */}
+              <GenderRadios />
             </div>
           </div>
           <div className="flex flex-col">
@@ -71,11 +54,12 @@ const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
             </label>
             <div className="flex flex-1 flex-col space-y-4 sm:flex-row sm:items-center sm:space-x-2 sm:space-y-0">
               <NumInputController
+                name=""
                 className="sm:max-w-[50px]"
                 control={control}
               />
-              <MonthInputController control={control} />
-              <YearInputController control={control} />
+              <MonthInputController name="" control={control} />
+              <YearInputController name="" control={control} />
             </div>
           </div>
         </div>

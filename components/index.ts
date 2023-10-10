@@ -30,3 +30,6 @@ export { default as Opportunity } from "./Opportunity";
 
 // Logo exports
 export { default as Logo } from "./Logo";
+
+// ServicePage exports
+export { default as Service } from "./Service/Service";

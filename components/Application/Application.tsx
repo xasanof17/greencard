@@ -13,14 +13,14 @@ import FormEducationLevel from "../Form/FormEducationLevel";
 
 const Application = () => {
   const t = useTranslations("Application");
-  const methods = useForm({
+  const methods = useForm<FormDataType>({
     defaultValues: {
       firstName: "",
       lastName: "",
       gender: "",
       dateOfBirth: {
         day: 1,
-        month: "September",
+        month: "January",
         year: 1960,
       },
       placeOfBirth: {
@@ -70,7 +70,7 @@ const Application = () => {
       },
     },
   });
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: FormDataType) => {
     console.log(data);
   };
   return (

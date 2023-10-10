@@ -3,9 +3,9 @@ import Image from "next/image";
 const NewsCards = () => {
   return (
     <>
-      {/* {[1, 2, 3].map((item) => ( */}
+      {[1, 2, 3].map((item) => (
         <div
-          // key={item}
+          key={item}
           className="flex select-none flex-col overflow-hidden rounded-lg bg-white shadow-md shadow-[#0000000a] transition-all duration-150 hover:shadow-xl"
         >
           <div className="relative h-[220px] w-full lg:h-[170px] xl:h-[200px]">
@@ -26,7 +26,7 @@ const NewsCards = () => {
             </h3>
           </div>
         </div>
-      {/* ))} */}
+      ))}
     </>
   );
 };
