@@ -4,6 +4,7 @@ import { FC } from "react";
 import clsx from "clsx";
 
 type ButtonProps = {
+  type?: "submit" | "button" | "reset" | undefined;
   className?: string;
   children?: React.ReactNode;
   onClick?: () => void;
@@ -11,6 +12,7 @@ type ButtonProps = {
 };
 
 const Button: FC<ButtonProps> = ({
+  type,
   className,
   children,
   onClick,
@@ -25,7 +27,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      type="button"
+      type={type ? type : "button"}
       className={clsx(
         "btn-primary group relative overflow-hidden text-white outline-none ring-offset-2 hover:ring-2 focus:ring-2",
         className,

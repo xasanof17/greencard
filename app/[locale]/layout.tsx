@@ -56,9 +56,9 @@ export async function generateMetadata({
       me: "1234567890",
     },
     icons: {
-      shortcut: `${BASE_URL}/icon.png`,
-      icon: `${BASE_URL}/favicon.ico`,
-      apple: `${BASE_URL}/favicon.ico`,
+      shortcut: `/favicon.ico`,
+      icon: `/icon.png`,
+      apple: `/icon.png`,
     },
     manifest: new URL(`${BASE_URL}/manifest.webmanifest`),
     publisher: "Vercel",

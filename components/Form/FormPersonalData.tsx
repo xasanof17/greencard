@@ -41,7 +41,7 @@ const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
             className="sm:max-w-xs"
           />
         </div>
-        <div className="flex flex-col items-start space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+        <div className="flex flex-col space-x-0 space-y-4 sm:items-start lg:flex-row lg:space-x-4 lg:space-y-0">
           <div className="flex flex-col justify-start sm:flex-col">
             <label htmlFor="" className="label">
               Jinsingiz
@@ -69,8 +69,11 @@ const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
             <label htmlFor="" className="label">
               Tug&apos;ilgan kuningiz
             </label>
-            <div className="flex items-center space-x-2">
-              <NumInputController className="w-10" control={control} />
+            <div className="flex flex-1 flex-col space-y-4 sm:flex-row sm:items-center sm:space-x-2 sm:space-y-0">
+              <NumInputController
+                className="sm:max-w-[50px]"
+                control={control}
+              />
               <MonthInputController control={control} />
               <YearInputController control={control} />
             </div>

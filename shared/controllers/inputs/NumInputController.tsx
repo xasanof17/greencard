@@ -27,13 +27,12 @@ const NumInputController: FC<NumInputControllerProps> = ({
       <Controller
         name=""
         control={control}
-        render={({field}) => (
+        render={({ field }) => (
           <input
             {...field}
             type="number"
             className={clsx(
-              className ? className : "",
-              variants.baseInput,
+              `${variants.baseInput} ${className ? className : ""}`,
               errors ? variants.error : variants.complate,
             )}
             {...props}
