@@ -7,15 +7,13 @@ import clsx from "clsx";
 import Image from "next/image";
 
 type BannerProps = {
-  title: string;
-  text?: string;
   className?: string;
-  height?: string;
 };
 
-const Banner = ({ title, text, height, className }: BannerProps) => {
+const Banner = ({ className }: BannerProps) => {
   const router = useRouter();
   const locale = useLocale();
+  const t = useTranslations("Banner");
 
   const variants = {
     defaultBanner:
@@ -30,9 +28,7 @@ const Banner = ({ title, text, height, className }: BannerProps) => {
   return (
     <section role="banner" className={className ? className : "py-10 xl:py-20"}>
       <div
-        className={`container relative rounded-xl ${
-          height ? height : variants.defaultBanner
-        }`}
+        className={`container relative rounded-xl ${variants.defaultBanner}`}
       >
         <Image
           src="/assets/banner.jpg"
@@ -50,16 +46,13 @@ const Banner = ({ title, text, height, className }: BannerProps) => {
                 variants.uz,
                 variants.en,
                 variants.ru,
-                height && "mb-4",
               )}
             >
-              {title}
+              {t("title")}
             </h1>
-            {text && (
-              <p className="my-4 text-base text-white md:my-6 md:text-lg xl:text-xl xl:text-white">
-                {text}
-              </p>
-            )}
+            <p className="my-4 text-base text-white md:my-6 md:text-lg xl:text-xl xl:text-white">
+              {t("text")}
+            </p>
             <div className="inline-block">
               <Button onClick={() => router.replace("/form")} />
             </div>

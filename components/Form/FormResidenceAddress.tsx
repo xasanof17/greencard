@@ -25,11 +25,13 @@ const FormResidenceAddress: FC<FormResidenceAddressProps> = ({ title }) => {
         </div>
         <div className="flex flex-col items-start space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
           <TextInputController
+            name="residenceAddress.addressLine"
             label="Manzilingiz"
             control={control}
             placeholder="Namozgoh mahalla, Archazor ko’chasi, 39-uy"
           />
           <TextInputController
+            name="residenceAddress.phoneNumber"
             label="Telfon Raqam"
             control={control}
             className="sm:max-w-xs"
