@@ -17,11 +17,14 @@ const Application = () => {
     defaultValues: {
       firstName: "",
       lastName: "",
-      gender: "",
+      gender: {
+        man: false,
+        woman: false,
+      },
       dateOfBirth: {
-        day: 1,
-        month: "January",
-        year: 1960,
+        day: "",
+        month: "",
+        year: "",
       },
       placeOfBirth: {
         stateName: "Uzbekistan",
@@ -31,9 +34,9 @@ const Application = () => {
       dataOfPassport: {
         series: "",
         givenDate: {
-          day: 1,
-          month: "January",
-          year: 1960,
+          day: "",
+          month: "",
+          year: "",
         },
       },
       img: "",
@@ -53,11 +56,14 @@ const Application = () => {
           {
             firstName: "",
             lastName: "",
-            gender: "",
+            gender: {
+              man: false,
+              woman: false,
+            },
             img: "",
             dateOfBirth: {
               day: 1,
-              month: "January",
+              month: "",
               year: 2001,
             },
             placeOfBirth: {

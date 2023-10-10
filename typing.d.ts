@@ -13,9 +13,9 @@ type Month =
   | "December";
 
 type FormDate = {
-  day: number;
-  month: Month;
-  year: number;
+  day: number | string;
+  month: Month | string;
+  year: number | string;
 };
 
 interface FormPlace {
@@ -27,7 +27,10 @@ interface FormPlace {
 type FormChildren = {
   firstName: string;
   lastName: string;
-  gender: string;
+  gender: {
+    man: boolean;
+    woman: boolean;
+  };
   img: string;
   dateOfBirth: FormDate;
   placeOfBirth: FormPlace;
@@ -36,7 +39,10 @@ type FormChildren = {
 type FormDataType = {
   firstName: string;
   lastName: string;
-  gender: string;
+  gender: {
+    man: boolean;
+    woman: boolean;
+  };
   dateOfBirth: FormDate;
   placeOfBirth: FormPlace;
   dataOfPassport: {

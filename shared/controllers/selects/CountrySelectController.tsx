@@ -5,16 +5,14 @@ import { Control, Controller } from "react-hook-form";
 
 type CountrySelectControllerProps = {
   label: string;
+  name?: string;
   control: Control<any>;
-} & DetailedHTMLProps<
-  SelectHTMLAttributes<HTMLSelectElement>,
-  HTMLSelectElement
->;
+};
 
 const CountrySelectController: FC<CountrySelectControllerProps> = ({
   label,
+  name,
   control,
-  ...props
 }) => {
   return (
     <div className="flex w-full flex-col sm:max-w-xs">
@@ -22,9 +20,9 @@ const CountrySelectController: FC<CountrySelectControllerProps> = ({
         {label}
       </label>
       <Controller
-        name=""
+        name={""}
         control={control}
-        render={({field}) => (
+        render={({ field }) => (
           <SearchSelect
             {...field}
             value={"value"}

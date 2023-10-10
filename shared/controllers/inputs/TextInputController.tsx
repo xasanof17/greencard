@@ -1,14 +1,14 @@
 "use client";
 import clsx from "clsx";
-import { DetailedHTMLProps, FC, InputHTMLAttributes } from "react";
-import { Control, Controller } from "react-hook-form";
+import { FC, InputHTMLAttributes } from "react";
+import { Control, Controller, useFormContext } from "react-hook-form";
 
 type TextInputControllerProps = {
-  label: string;
-  name: string;
+  label?: string;
+  name: "lastName" | "firstName" | "address" | "dataOfPassport.series";
   control: Control<any>;
   className?: string;
-} & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+} & InputHTMLAttributes<HTMLInputElement>;
 
 const TextInputController: FC<TextInputControllerProps> = ({
   label,
@@ -17,32 +17,41 @@ const TextInputController: FC<TextInputControllerProps> = ({
   className,
   ...props
 }) => {
-  const errors = false;
+  const { formState } = useFormContext();
+  const errors = formState.errors[name];
 
   const variants = {
     baseInput:
       "w-full rounded-md focus:bg-slate-100 border-2 placeholder:font-normal px-2 py-[6px] text-base font-medium uppercase outline-none sm:py-1 hover:ring-1 focus:ring-1",
-    complate: "hover:border-blue-500  focus:border-blue-500 text-black",
+    complete: "hover:border-blue-500 focus:border-blue-500 text-black",
     error:
-      "border-red-500 hover:border-red-500  focus:border-red-500 text-red-500",
+      "border-red-500 hover:border-red-500 focus:border-red-500 text-red-500",
   };
+
   return (
     <div className={clsx(className, "flex w-full flex-col")}>
-      <label htmlFor="" className="label">
+      <label htmlFor={name} className="label">
         {label}
       </label>
       <Controller
         name={name}
         control={control}
-        render={({ field }) => (
+        render={({ field, fieldState }) => (
           <input
             {...field}
             type="text"
+            name={name}
             className={clsx(
               variants.baseInput,
-              errors ? variants.error : variants.complate,
+              fieldState.error || fieldState.invalid
+                ? variants.error
+                : variants.complete,
             )}
             {...props}
+            onChange={(e) => {
+              const uppercaseValue = e.target.value.toUpperCase();
+              field.onChange(uppercaseValue);
+            }}
           />
         )}
       />

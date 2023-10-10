@@ -1,45 +1,49 @@
 "use client";
 import clsx from "clsx";
-import { DetailedHTMLProps, FC, InputHTMLAttributes } from "react";
+import { FC, InputHTMLAttributes, useRef } from "react";
 import { Control, Controller } from "react-hook-form";
 
 type NumInputControllerProps = {
   className?: string;
+  name: string;
   control: Control<any>;
-} & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+} & InputHTMLAttributes<HTMLInputElement>;
 
 const NumInputController: FC<NumInputControllerProps> = ({
   className,
   control,
+  name,
   ...props
 }) => {
-  const errors = false;
-
-  const variants = {
-    baseInput:
-      "numInput appearance-none w-full rounded-md border-2 px-2 py-[6px] text-base font-medium uppercase outline-none sm:py-1 hover:ring-1 focus:ring-1",
-    complate: "hover:border-blue-500  focus:border-blue-500 text-black",
-    error:
-      "border-red-500 hover:border-red-500  focus:border-red-500 text-red-500",
-  };
+  let inputRef = useRef<HTMLInputElement | null>(null);
   return (
-    <>
-      <Controller
-        name=""
-        control={control}
-        render={({ field }) => (
-          <input
-            {...field}
-            type="number"
-            className={clsx(
-              `${variants.baseInput} ${className ? className : ""}`,
-              errors ? variants.error : variants.complate,
-            )}
-            {...props}
-          />
-        )}
-      />
-    </>
+    <Controller
+      name={name}
+      control={control}
+      defaultValue=""
+      render={({ field, fieldState }) => (
+        <input
+          {...field}
+          type="text"
+          className={clsx(
+            "numInput w-full appearance-none rounded-md border-2 px-2 py-[6px] text-base font-medium uppercase outline-none hover:ring-1 focus:ring-1 sm:py-1",
+            className,
+            fieldState.error || fieldState.invalid
+              ? "border-red-500 text-red-500 hover:border-red-500 focus:border-red-500"
+              : "text-black hover:border-blue-500 focus:border-blue-500",
+          )}
+          min={1}
+          max={31}
+          maxLength={2} // Limit input to two digits
+          inputMode="numeric" // Enforce numeric keyboard on mobile devices
+          {...props}
+          ref={(e) => {
+            field.ref(e); // Set the field's reference
+            inputRef.current = e; // Assign the input reference to the ref
+          }}
+        />
+      )}
+    />
   );
 };
 
