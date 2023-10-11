@@ -4,6 +4,8 @@ import { useFormContext } from "react-hook-form";
 import FormHeader from "./FormHeader";
 import FormBody from "./FormBody";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 type FormPicturePlacementProps = {
   title: string;
@@ -11,6 +13,8 @@ type FormPicturePlacementProps = {
 
 const PicturePlacementForm: FC<FormPicturePlacementProps> = ({ title }) => {
   const { control } = useFormContext();
+
+  const t = useTranslations("PicturePlacement");
   return (
     <div className="my-10 flex flex-col">
       <FormHeader title={title} />
@@ -26,26 +30,33 @@ const PicturePlacementForm: FC<FormPicturePlacementProps> = ({ title }) => {
                 className="object-contain"
               />
             </div>
-            <button className="mt-3">upload</button>
+            <button className="mt-3">{t("button")}</button>
           </div>
           <div className="col-span-3 flex flex-col">
             <h3 className="text-lg font-medium text-blue-600 xl:text-xl">
-              Fotosurat yuklashning qisqacha qoidalari:
+              {t("title")}
             </h3>
             <p className="my-5 text-base font-medium text-red-500 lg:text-lg">
-              DIQQAT: Uy sharoitida tushirilgan rasmlarni yuklamang. Rasm
-              fotosalonda tushirilgan bo&apos;lishi kerak.
+              {t.rich("text2", {
+                span: (chunks) => <b>{chunks}</b>,
+              })}
             </p>
             <p className="text-base font-medium text-[#333] lg:text-lg">
-              Yuklanayotgan fotosurat maksimal hajmi <b>240 KB</b> dan
-              oshmasligi.
-              <br className="block" />
-              Fotosurat kengligi kamida <b>600X600 piksel</b> yoki <b>5x5 sm</b>{" "}
-              bo&apos;lishi lozim. <br />
-              Fotosurat foni oq va ravshan bo&apos;lishi lozim.
-              <br />
-              Fotosuratni kerakli hajmda kesish va tayyorlash uchun mana bu
-              yerga o&apos;ting.
+              {t.rich("text3", {
+                span: (chunks) => <b>{chunks}</b>,
+              })}
+            </p>
+            <p className="text-base font-medium text-[#333] lg:text-lg">
+              {t("text4")}
+            </p>
+            <p className="text-base font-medium text-[#333] lg:text-lg">
+              {t.rich("text5", {
+                link: (chunks) => (
+                  <Link href="/" className="font-bold text-blue-500">
+                    {chunks}
+                  </Link>
+                ),
+              })}
             </p>
           </div>
         </div>

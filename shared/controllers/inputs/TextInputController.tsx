@@ -19,7 +19,7 @@ const TextInputController: FC<TextInputControllerProps> = ({
 }) => {
   const variants = {
     baseInput:
-      "w-full rounded-md focus:bg-slate-100 border-2 placeholder:font-normal px-2 py-[6px] text-base font-medium uppercase outline-none sm:py-1 hover:ring-1 focus:ring-1",
+      "w-full rounded-md focus:bg-slate-100 border-2 placeholder:font-normal px-2 py-[6px] text-base font-medium uppercase outline-none sm:py-2 hover:ring-1 focus:ring-1",
     complete: "hover:border-blue-500 focus:border-blue-500 text-black",
     error:
       "border-red-500 hover:border-red-500 focus:border-red-500 text-red-500",

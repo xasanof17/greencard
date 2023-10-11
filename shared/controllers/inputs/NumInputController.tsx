@@ -27,7 +27,7 @@ const NumInputController: FC<NumInputControllerProps> = ({
           id={name}
           type="text"
           className={clsx(
-            "numInput w-full appearance-none rounded-md border-2 px-2 py-[6px] text-base font-medium uppercase outline-none hover:ring-1 focus:ring-1 sm:py-1",
+            "numInput w-full appearance-none rounded-md border-2 px-2 py-2 text-base font-medium uppercase outline-none hover:ring-1 focus:ring-1",
             className,
             fieldState.error || fieldState.invalid
               ? "border-red-500 text-red-500 hover:border-red-500 focus:border-red-500"

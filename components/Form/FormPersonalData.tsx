@@ -74,7 +74,7 @@ const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
             <label htmlFor="" className="label">
               {t("dataOfPassport.label")}
             </label>
-            <div className="flex flex-col space-x-0 space-y-4 sm:space-x-4 sm:space-y-0 md:flex-row md:items-center">
+            <div className="flex flex-col space-x-0 space-y-4 md:flex-row md:items-center md:space-x-4 md:space-y-0">
               <TextInputController
                 name="dataOfPassport.series"
                 control={control}
