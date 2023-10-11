@@ -10,11 +10,11 @@ import { FormDialogForChildData } from "./Dialog";
 import FormHeader from "./FormHeader";
 import FormBody from "./FormBody";
 
-type FormMaritalStatusProps = {
+type FormFamilySituationProps = {
   title: string;
 };
 
-const FormMaritalStatus: FC<FormMaritalStatusProps> = ({ title }) => {
+const FormFamilySituation: FC<FormFamilySituationProps> = ({ title }) => {
   const { control } = useFormContext();
   const [isOpen, setIsOpen] = useState(true);
 
@@ -40,4 +40,4 @@ const FormMaritalStatus: FC<FormMaritalStatusProps> = ({ title }) => {
   );
 };
 
-export default FormMaritalStatus;
+export default FormFamilySituation;

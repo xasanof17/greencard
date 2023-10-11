@@ -5,12 +5,12 @@ import {
   NumInputController,
   TextInputController,
   YearInputController,
-  CountrySelectController,
 } from "@/shared/controllers";
 import { useFormContext } from "react-hook-form";
 import FormHeader from "./FormHeader";
 import FormBody from "./FormBody";
 import GenderRadios from "./GenderRadios";
+import { useTranslations } from "next-intl";
 
 type FormPersonalDataProps = {
   title: string;
@@ -18,6 +18,8 @@ type FormPersonalDataProps = {
 
 const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
   const { control } = useFormContext<FormDataType>();
+
+  const t = useTranslations("PersonalData");
 
   return (
     <div className="my-10 flex flex-col">
@@ -27,22 +29,22 @@ const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
           <TextInputController
             name="lastName"
             control={control}
-            label="Familiyangiz (Ingliz tilida)"
-            placeholder="Familiyangiz"
+            label={t("surname.label")}
+            placeholder={t("surname.placeholder")}
             className="sm:max-w-xs"
           />
           <TextInputController
             name="firstName"
             control={control}
-            label="Ismingiz (Ingliz tilida)"
-            placeholder="Ismingiz"
+            label={t("name.label")}
+            placeholder={t("name.placeholder")}
             className="sm:max-w-xs"
           />
         </div>
         <div className="flex flex-col space-x-0 space-y-4 sm:items-start lg:flex-row lg:space-x-4 lg:space-y-0">
           <div className="flex flex-col justify-start sm:flex-col">
-            <label htmlFor="" className="label">
-              Jinsingiz
+            <label htmlFor="gender" className="label">
+              {t("gender.title")}
             </label>
             <div className="grid w-full grid-cols-2 items-center space-x-4 sm:max-w-xs">
               <GenderRadios />
@@ -50,7 +52,7 @@ const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
           </div>
           <div className="flex flex-col">
             <label htmlFor="" className="label">
-              Tug&apos;ilgan kuningiz
+              {t("birhday.label")}
             </label>
             <div className="flex flex-1 flex-col space-y-4 sm:flex-row sm:items-center sm:space-x-2 sm:space-y-0">
               <NumInputController
@@ -70,8 +72,7 @@ const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
         <div className="flex w-full flex-col">
           <div className="flex flex-col">
             <label htmlFor="" className="label">
-              PASPORT MA&apos;LUMOTLARINGIZ (SERIYA RAQAMI VA AMAL QILISH
-              MUDDATI)
+              {t("dataOfPassport.label")}
             </label>
             <div className="flex flex-col space-x-0 space-y-4 sm:space-x-4 sm:space-y-0 md:flex-row md:items-center">
               <TextInputController

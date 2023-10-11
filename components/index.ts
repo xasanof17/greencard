@@ -5,7 +5,7 @@ export { default as FormPolicy } from "./Form/FormPolicy";
 export { default as FormPersonalData } from "./Form/FormPersonalData";
 export { default as FormPicturePlacement } from "./Form/FormPicturePlacement";
 export { default as FormResidenceAddress } from "./Form/FormResidenceAddress";
-export { default as FormMaritalStatus } from "./Form/FormMaritalStatus";
+export { default as FormFamilySituation } from "./Form/FormFamilySituation";
 
 // Other components exports
 export { default as Banner } from "./Banner";

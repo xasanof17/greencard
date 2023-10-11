@@ -5,7 +5,7 @@ import {
   FormPersonalData,
   FormPicturePlacement,
   FormResidenceAddress,
-  FormMaritalStatus,
+  FormFamilySituation,
 } from "@/components";
 import { useTranslations } from "next-intl";
 import { FormProvider, useForm } from "react-hook-form";
@@ -79,6 +79,7 @@ const Application = () => {
   const onSubmit = (data: FormDataType) => {
     console.log(data);
   };
+
   return (
     <section
       id="application"
@@ -90,11 +91,11 @@ const Application = () => {
       {/* <Note /> */}
       <FormProvider {...methods}>
         <form className="my-10" onSubmit={methods.handleSubmit(onSubmit)}>
-          <FormPersonalData title="Shaxsiy ma'lumotlar" />
-          <FormPicturePlacement title="Rasm joylashtirish" />
-          <FormResidenceAddress title="Yashash manzili" />
-          <FormEducationLevel title="O'quv ma'lumotingiz" />
-          <FormMaritalStatus title="Oilaviy sharoitingiz" />
+          <FormPersonalData title={t("PersonalData.title")} />
+          <FormPicturePlacement title={t("PicturePlacement.title")} />
+          <FormResidenceAddress title={t("ResidenceAddress.title")} />
+          <FormEducationLevel title={t("EducationLevel.title")} />
+          <FormFamilySituation title={t("FamilySituation.title")} />
         </form>
       </FormProvider>
     </section>

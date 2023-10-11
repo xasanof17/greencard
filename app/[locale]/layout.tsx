@@ -51,7 +51,7 @@ export async function generateMetadata({
     colorScheme: "light",
     generator: "Next.js",
     verification: {
-      google: "1234567890",
+      google: `${process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION}`,
       yandex: "1234567890",
       me: "1234567890",
     },
