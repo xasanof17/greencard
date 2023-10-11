@@ -1,11 +1,11 @@
 "use client";
 import clsx from "clsx";
 import { FC, InputHTMLAttributes } from "react";
-import { Control, Controller, useFormContext } from "react-hook-form";
+import { Control, Controller } from "react-hook-form";
 
 type TextInputControllerProps = {
   label?: string;
-  name: "lastName" | "firstName" | "address" | "dataOfPassport.series";
+  name: string;
   control: Control<any>;
   className?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
@@ -17,9 +17,6 @@ const TextInputController: FC<TextInputControllerProps> = ({
   className,
   ...props
 }) => {
-  const { formState } = useFormContext();
-  const errors = formState.errors[name];
-
   const variants = {
     baseInput:
       "w-full rounded-md focus:bg-slate-100 border-2 placeholder:font-normal px-2 py-[6px] text-base font-medium uppercase outline-none sm:py-1 hover:ring-1 focus:ring-1",

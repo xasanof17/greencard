@@ -20,10 +20,10 @@ const DialogBody: FC<DialogBodyProps> = ({ setIsOpen }) => {
       <DialogHeader setIsOpen={setIsOpen} />
       <div className="my-4 grid grid-cols-2 gap-10">
         <div className={variants.sides}>
-          <TextInputController name="" label="Familiya" control={control} />
+          <TextInputController name="lastName" label="Familiya" control={control} />
         </div>
         <div className={variants.sides}>
-          <TextInputController name="" label="Ism" control={control} />
+          <TextInputController name="firstName" label="Ism" control={control} />
         </div>
       </div>
 

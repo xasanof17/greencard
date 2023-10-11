@@ -1,6 +1,6 @@
 "use client";
-import { DetailedHTMLProps, FC, SelectHTMLAttributes } from "react";
-import { SearchSelect, SearchSelectItem, SelectItem } from "@tremor/react";
+import { FC } from "react";
+import { SearchSelect, SearchSelectItem } from "@tremor/react";
 import { Control, Controller } from "react-hook-form";
 
 type CountrySelectControllerProps = {
