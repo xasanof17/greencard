@@ -8,6 +8,7 @@ import { useFormContext } from "react-hook-form";
 import { getCountries } from "@/functions";
 import FormHeader from "./FormHeader";
 import FormBody from "./FormBody";
+import { useTranslations } from "next-intl";
 
 type FormResidenceAddressProps = {
   title: string;
@@ -17,6 +18,7 @@ const FormResidenceAddress: FC<FormResidenceAddressProps> = async ({
   title,
 }) => {
   const { control } = useFormContext();
+  const t = useTranslations("ResidenceAddress");
   // const [countries, setCountries] = useState([]);
 
   const token =
@@ -40,22 +42,32 @@ const FormResidenceAddress: FC<FormResidenceAddressProps> = async ({
       <FormHeader title={title} />
       <FormBody className="space-y-4">
         <div className="flex flex-col items-start space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-          <CountrySelectController label="Davlatingiz" control={control} />
-          <CountrySelectController label="Viloyatingiz" control={control} />
-          <CountrySelectController label="Tumaningiz" control={control} />
+          <CountrySelectController
+            label={t("Select.Country")}
+            control={control}
+          />
+          <CountrySelectController
+            label={t("Select.State")}
+            control={control}
+          />
+          <CountrySelectController
+            label={t("Select.District")}
+            control={control}
+          />
         </div>
         <div className="flex flex-col items-start space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
           <TextInputController
             name="residenceAddress.addressLine"
-            label="Manzilingiz"
+            label={t("Address.label")}
             control={control}
-            placeholder="Namozgoh mahalla, Archazor ko’chasi, 39-uy"
+            placeholder={t("Address.placeholder")}
           />
           <TextInputController
             name="residenceAddress.phoneNumber"
-            label="Telfon Raqam"
+            label={t("phoneNumber")}
             control={control}
             className="sm:max-w-xs"
+            phonePattern
           />
         </div>
       </FormBody>

@@ -1,13 +1,19 @@
 "use client";
 import clsx from "clsx";
-import { FC, InputHTMLAttributes } from "react";
-import { Control, Controller } from "react-hook-form";
+import { ChangeEvent, FC, InputHTMLAttributes } from "react";
+import {
+  Control,
+  Controller,
+  ControllerRenderProps,
+  useFormContext,
+} from "react-hook-form";
 
 type TextInputControllerProps = {
   label?: string;
   name: string;
   control: Control<any>;
   className?: string;
+  phonePattern?: boolean;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const TextInputController: FC<TextInputControllerProps> = ({
@@ -15,6 +21,7 @@ const TextInputController: FC<TextInputControllerProps> = ({
   name,
   control,
   className,
+  phonePattern,
   ...props
 }) => {
   const variants = {
@@ -23,6 +30,16 @@ const TextInputController: FC<TextInputControllerProps> = ({
     complete: "hover:border-blue-500 focus:border-blue-500 text-black",
     error:
       "border-red-500 hover:border-red-500 focus:border-red-500 text-red-500",
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value;
+
+    if (phonePattern) {
+      /^\d{10}$/.test(inputValue);
+    } else {
+      inputValue.toUpperCase();
+    }
   };
 
   return (
@@ -46,10 +63,7 @@ const TextInputController: FC<TextInputControllerProps> = ({
                 : variants.complete,
             )}
             {...props}
-            onChange={(e) => {
-              const uppercaseValue = e.target.value.toUpperCase();
-              field.onChange(uppercaseValue);
-            }}
+            onChange={(e) => handleChange(e)}
           />
         )}
       />
