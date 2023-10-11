@@ -51,7 +51,7 @@ const FormPersonalData: FC<FormPersonalDataProps> = ({ title }) => {
             </div>
           </div>
           <div className="flex flex-col">
-            <label htmlFor="" className="label">
+            <label htmlFor="birthday.label" className="label">
               {t("birhday.label")}
             </label>
             <div className="flex flex-1 flex-col space-y-4 sm:flex-row sm:items-center sm:space-x-2 sm:space-y-0">

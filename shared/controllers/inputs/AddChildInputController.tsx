@@ -8,11 +8,13 @@ import clsx from "clsx";
 
 type AddChildInputControllerProps = {
   title: string;
+  name: string;
   control: Control<any>;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 const AddChildInputController: FC<AddChildInputControllerProps> = ({
   title,
+  name,
   control,
   ...props
 }) => {
@@ -28,16 +30,17 @@ const AddChildInputController: FC<AddChildInputControllerProps> = ({
 
   return (
     <div className="flex w-full flex-col sm:max-w-md">
-      <label htmlFor="" className="label">
+      <label htmlFor={name} className="label">
         {title}
       </label>
       <Controller
-        name=""
+        name={name}
         control={control}
         render={({ field }) => (
           <div className={clsx("flex items-center", variants.baseInput)}>
             <input
               {...field}
+              id={name}
               type="text"
               className="h-full w-full bg-transparent py-2 outline-none placeholder:font-medium placeholder:uppercase placeholder:text-primary sm:py-[5px]"
               placeholder={addedChild ? "Xasanov Javohir" : `Farzand qo'shish`}

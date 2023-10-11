@@ -1,12 +1,7 @@
 "use client";
 import clsx from "clsx";
 import { ChangeEvent, FC, InputHTMLAttributes } from "react";
-import {
-  Control,
-  Controller,
-  ControllerRenderProps,
-  useFormContext,
-} from "react-hook-form";
+import { Control, Controller } from "react-hook-form";
 
 type TextInputControllerProps = {
   label?: string;
@@ -63,7 +58,18 @@ const TextInputController: FC<TextInputControllerProps> = ({
                 : variants.complete,
             )}
             {...props}
-            onChange={(e) => handleChange(e)}
+            // onChange={(e) => handleChange(e)}
+            onChange={(e) => {
+              const inputValue = e.target.value;
+              if (phonePattern) {
+                const re = /^\d{10}$/;
+                const number = re.test(inputValue);
+                field.onChange(number);
+              } else {
+                const uppercaseValue = inputValue.toUpperCase();
+                field.onChange(uppercaseValue);
+              }
+            }}
           />
         )}
       />

@@ -48,7 +48,7 @@ const Application = () => {
         phoneNumber: "",
       },
       educationLevel: {
-        level: "Oliy ma'lumot",
+        level: "",
       },
       maritalStatus: {
         status: "Uylangan",

@@ -14,9 +14,7 @@ type FormResidenceAddressProps = {
   title: string;
 };
 
-const FormResidenceAddress: FC<FormResidenceAddressProps> = async ({
-  title,
-}) => {
+const FormResidenceAddress: FC<FormResidenceAddressProps> = ({ title }) => {
   const { control } = useFormContext();
   const t = useTranslations("ResidenceAddress");
   // const [countries, setCountries] = useState([]);

@@ -5,6 +5,7 @@ import {
   AddChildInputController,
   MaritalStatusController,
 } from "@/shared/controllers";
+import { useTranslations } from "next-intl";
 import { Button } from "@/shared/ui";
 import { FormDialogForChildData } from "./Dialog";
 import FormHeader from "./FormHeader";
@@ -17,19 +18,25 @@ type FormFamilySituationProps = {
 const FormFamilySituation: FC<FormFamilySituationProps> = ({ title }) => {
   const { control } = useFormContext();
   const [isOpen, setIsOpen] = useState(true);
+  const t = useTranslations("FamilySituation");
 
   return (
     <div className="my-10 flex flex-col">
       <FormHeader title={title} />
       <FormBody className="space-y-7 sm:space-y-4">
-        <MaritalStatusController title={title} control={control} />
+        <MaritalStatusController
+          name="maritalStatus.status"
+          title={title}
+          control={control}
+        />
         <AddChildInputController
-          title="21 yoshga to'lmagan farzandlar haqida ma'lumot kiriting"
+          name="children"
+          title={t("AddChild.label")}
           control={control}
         />
         <div className="block sm:inline-block">
           <Button type="submit" className="w-full">
-            Send
+            {t("button")}
           </Button>
         </div>
         {/* {isOpen && ( */}
