@@ -37,6 +37,7 @@ const TextInputController: FC<TextInputControllerProps> = ({
           <input
             {...field}
             type="text"
+            id={name}
             name={name}
             className={clsx(
               variants.baseInput,

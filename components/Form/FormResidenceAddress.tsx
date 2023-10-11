@@ -1,10 +1,11 @@
 "use client";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   CountrySelectController,
   TextInputController,
 } from "@/shared/controllers";
 import { useFormContext } from "react-hook-form";
+import { getCountries } from "@/functions";
 import FormHeader from "./FormHeader";
 import FormBody from "./FormBody";
 
@@ -12,8 +13,28 @@ type FormResidenceAddressProps = {
   title: string;
 };
 
-const FormResidenceAddress: FC<FormResidenceAddressProps> = ({ title }) => {
+const FormResidenceAddress: FC<FormResidenceAddressProps> = async ({
+  title,
+}) => {
   const { control } = useFormContext();
+  // const [countries, setCountries] = useState([]);
+
+  const token =
+    "d4eH0ylNoAqfeQ-v-eKtpNsyKQ0WqDVc3ysiBSsQdEUczpBpKId6l-I74WPwlFJxJd4";
+  const token2 =
+    "1I4tbmlVDAjTqTO1sVM2ws7uJioR-LXyXFtxXvnRtPvZRab50nvFYQuV_NIfaufM2Ko";
+
+  // const countries = await getCountries();
+  // console.log(countries);
+
+  // useEffect(() => {
+  //   async function () => {
+  //  const countries = await getCountries();
+  // }
+
+  //   fetchData();
+  // }, []);
+
   return (
     <div className="my-10 flex flex-col">
       <FormHeader title={title} />

@@ -24,6 +24,7 @@ const NumInputController: FC<NumInputControllerProps> = ({
       render={({ field, fieldState }) => (
         <input
           {...field}
+          id={name}
           type="text"
           className={clsx(
             "numInput w-full appearance-none rounded-md border-2 px-2 py-[6px] text-base font-medium uppercase outline-none hover:ring-1 focus:ring-1 sm:py-1",

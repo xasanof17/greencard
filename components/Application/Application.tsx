@@ -87,7 +87,7 @@ const Application = () => {
     >
       <h1 className="title">{t("title")}</h1>
       <Timer />
-      <Note />
+      {/* <Note /> */}
       <FormProvider {...methods}>
         <form className="my-10" onSubmit={methods.handleSubmit(onSubmit)}>
           <FormPersonalData title="Shaxsiy ma'lumotlar" />

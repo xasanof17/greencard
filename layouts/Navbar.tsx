@@ -55,11 +55,11 @@ const Navbar = () => {
             locale == "ru" ? "space-x-2 xl:space-x-0" : "space-x-2"
           }`}
         >
-          {links.map(({ href, title }, i) => (
+          {/* {links.map(({ href, title }, i) => (
             <li key={i}>
               <NavigationLink href={href}>{title}</NavigationLink>
             </li>
-          ))}
+          ))} */}
         </ul>
         <div className="flex items-center space-x-3 lg:space-x-2">
           <SwitcherLanguage locale={locale} className="hidden sm:block" />
@@ -81,7 +81,7 @@ const Navbar = () => {
         {toggleMenu && (
           <div className="fixed left-0 top-16 flex min-h-screen w-screen flex-col items-center justify-start bg-white py-10 lg:hidden">
             <ul className="flex flex-col items-center justify-center space-y-5 lg:hidden">
-              {links.map(({ href, title }, i) => (
+              {/* {links.map(({ href, title }, i) => (
                 <li key={i}>
                   <NavigationLink
                     onClick={() => setToggleMenu((prev) => !prev)}
@@ -90,7 +90,7 @@ const Navbar = () => {
                     {title}
                   </NavigationLink>
                 </li>
-              ))}
+              ))} */}
             </ul>
             <SwitcherLanguage
               locale={locale}
