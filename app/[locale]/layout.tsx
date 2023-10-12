@@ -7,6 +7,7 @@ import { BottomFixed, Opportunity } from "@/components";
 import { getMessages } from "@/functions";
 import meta from "@/meta";
 import clsx from "clsx";
+import Analytics from "@/meta/Analytics";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
@@ -105,9 +106,21 @@ export default async function LocaleLayout({
   params: { locale },
 }: LayoutProps) {
   const messages = await getMessages(locale);
+  const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
   return (
     <html lang={locale}>
+      <head>
+        <Analytics />
+      </head>
       <body className={clsx(inter.className)}>
+        <noscript>
+          <iframe
+            style={{ display: "none", visibility: "hidden" }}
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+          ></iframe>
+        </noscript>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           {children}
