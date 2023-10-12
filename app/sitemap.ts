@@ -10,6 +10,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/information",
     "/questions",
     "/contact",
+    "/form",
+    "/form/application"
   ];
 
   // Generate the sitemap data
