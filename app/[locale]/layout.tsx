@@ -28,7 +28,10 @@ export async function generateMetadata({
   const t = createTranslator({ locale, messages });
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
   return {
-    title: t("Layout.title"),
+    title: {
+      default: t("Layout.title"),
+      template: `%s | ${t("Layout.title")}`,
+    },
     description: t("Layout.description"),
     abstract: t("Layout.description"),
     alternates: {
@@ -46,7 +49,7 @@ export async function generateMetadata({
       name: "Xasanov Javohir",
       url: "https://bit.ly/javohir",
     },
-    category: "Greencard - DV2025 Period",
+    category: "Green Card",
     creator: "JX Team",
     colorScheme: "light",
     generator: "Next.js",
