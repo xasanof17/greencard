@@ -39,7 +39,7 @@ const Timer: FC = () => {
       <div className="col-span-3 flex flex-col items-center justify-center space-x-3 space-y-2 sm:flex-row sm:space-y-0 lg:justify-start lg:space-x-2 xl:space-x-3">
         <div className="relative h-12 w-12 lg:h-10 lg:w-10 xl:h-14 xl:w-14">
           <Image
-            src="/assets/department_state.png"
+            src="/assets/logo.svg"
             alt="logo"
             fill
             sizes="100vw"

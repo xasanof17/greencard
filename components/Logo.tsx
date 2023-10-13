@@ -5,7 +5,7 @@ const Logo = () => {
     <>
       <div className="relative h-10 w-10 lg:h-14 lg:w-14">
         <Image
-          src="/assets/department_state.png"
+          src="/assets/logo.svg"
           alt="logo"
           fill
           sizes="100vw"
