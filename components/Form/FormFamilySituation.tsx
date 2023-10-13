@@ -17,7 +17,7 @@ type FormFamilySituationProps = {
 
 const FormFamilySituation: FC<FormFamilySituationProps> = ({ title }) => {
   const { control } = useFormContext();
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations("FamilySituation");
 
   return (
@@ -33,15 +33,16 @@ const FormFamilySituation: FC<FormFamilySituationProps> = ({ title }) => {
           name="children"
           title={t("AddChild.label")}
           control={control}
+          setIsOpen={setIsOpen}
         />
         <div className="block sm:inline-block">
           <Button type="submit" className="w-full">
             {t("button")}
           </Button>
         </div>
-        {/* {isOpen && ( */}
-        {/* <FormDialogForChildData isOpen={isOpen} setIsOpen={setIsOpen} /> */}
-        {/* )} */}
+        {isOpen && (
+          <FormDialogForChildData isOpen={isOpen} setIsOpen={setIsOpen} />
+        )}
       </FormBody>
     </div>
   );

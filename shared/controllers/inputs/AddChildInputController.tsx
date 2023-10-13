@@ -1,5 +1,11 @@
 "use client";
-import { DetailedHTMLProps, FC, InputHTMLAttributes } from "react";
+import {
+  DetailedHTMLProps,
+  Dispatch,
+  FC,
+  InputHTMLAttributes,
+  SetStateAction,
+} from "react";
 import { Control, Controller } from "react-hook-form";
 import { GrAddCircle } from "react-icons/gr";
 import { IoMdCloseCircleOutline } from "react-icons/io";
@@ -10,12 +16,14 @@ type AddChildInputControllerProps = {
   title: string;
   name: string;
   control: Control<any>;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 const AddChildInputController: FC<AddChildInputControllerProps> = ({
   title,
   name,
   control,
+  setIsOpen,
   ...props
 }) => {
   const variants = {
@@ -72,7 +80,11 @@ const AddChildInputController: FC<AddChildInputControllerProps> = ({
                 </button>
               </div>
             ) : (
-              <button type="button" className={variants.button}>
+              <button
+                onClick={() => setIsOpen((prev) => !prev)}
+                type="button"
+                className={variants.button}
+              >
                 <GrAddCircle fontSize={23} className={variants.buttonIcon} />
               </button>
             )}

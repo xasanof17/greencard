@@ -27,9 +27,9 @@ const Application = () => {
         year: "",
       },
       placeOfBirth: {
-        stateName: "Uzbekistan",
-        regionName: "Tashkent",
-        districtName: "Chilanzar",
+        stateName: "",
+        regionName: "",
+        districtName: "",
       },
       dataOfPassport: {
         series: "",
@@ -41,9 +41,9 @@ const Application = () => {
       },
       img: "",
       residenceAddress: {
-        stateName: "Uzbekistan",
-        regionName: "Tashkent",
-        districtName: "Chilanzar",
+        stateName: "",
+        regionName: "",
+        districtName: "",
         addressLine: "",
         phoneNumber: "",
       },
@@ -51,7 +51,7 @@ const Application = () => {
         level: "",
       },
       maritalStatus: {
-        status: "Uylangan",
+        status: "",
         children: [
           {
             firstName: "",
@@ -62,14 +62,14 @@ const Application = () => {
             },
             img: "",
             dateOfBirth: {
-              day: 1,
+              day: "",
               month: "",
-              year: 2001,
+              year: "",
             },
             placeOfBirth: {
-              stateName: "Uzbekistan",
-              regionName: "Tashkent",
-              districtName: "Chilanzar",
+              stateName: "",
+              regionName: "",
+              districtName: "",
             },
           },
         ],

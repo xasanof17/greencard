@@ -13,14 +13,14 @@ const FormDialogForChildData: FC<FormDialogForChildDataProps> = ({
   setIsOpen,
 }) => {
   return (
-    <Transition appear show={isOpen} as={Fragment}>
+    <Transition appear show={isOpen} as="div">
       <Dialog
         as="div"
         className="relative z-[100]"
         onClose={() => setIsOpen((prev) => !prev)}
       >
         <Transition.Child
-          as={Fragment}
+          as="div"
           enter="ease-out duration-300"
           enterFrom="opacity-0"
           enterTo="opacity-100"
@@ -34,7 +34,7 @@ const FormDialogForChildData: FC<FormDialogForChildDataProps> = ({
         <div className="fixed inset-0 overflow-y-auto">
           <div className="flex min-h-full items-center justify-center text-center">
             <Transition.Child
-              as={Fragment}
+              as="div"
               enter="ease-out duration-300"
               enterFrom="opacity-0 scale-95"
               enterTo="opacity-100 scale-100"

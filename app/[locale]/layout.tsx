@@ -86,7 +86,7 @@ export async function generateMetadata({
       emails: meta.emails,
       faxNumbers: meta.faxNumbers,
       url: `${BASE_URL}`,
-      siteName: "Greencard - DV2025",
+      siteName: t("Layout.title"),
       phoneNumbers: meta.faxNumbers,
       images: [
         {
