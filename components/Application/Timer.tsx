@@ -26,7 +26,7 @@ const Timer: FC = () => {
   const [isTimeUp, setTimeUp] = useState<boolean>(false);
 
   // Set the initialExpiryTimestamp to November 7, 2023, at 12:00 PM (EST)
-  const expiryTimestamp = new Date("2023-11-07T12:00:00-05:00");
+  const expiryTimestamp = new Date("2023-11-07T12:00:00+05:00");
 
   const handleTimeUp = () => {
     setTimeUp(true);

@@ -95,7 +95,7 @@ const CountdownTimer: FC<CountdownTimerProps> = ({
           </div>
         ))}
       </div>
-      {timeLeft.days === 1 && <WarningComponent />}{" "}
+      {timeLeft.days === 1 && <WarningComponent />}
       {/* Display the warning component */}
     </div>
   );
