@@ -1,12 +1,11 @@
 "use client";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import FormHeader from "./FormHeader";
-import Image from "next/image";
 import Link from "next/link";
 import FormBody from "./FormBody";
-import ImageUploading, { ImageType } from "react-images-uploading";
+import FormImageUpload from "./FormImageUpload";
 
 type FormPicturePlacementProps = {
   title: string;
@@ -16,74 +15,27 @@ const PicturePlacementForm: FC<FormPicturePlacementProps> = ({ title }) => {
   const { control } = useFormContext();
 
   const t = useTranslations("PicturePlacement");
-  const [image, setImage] = useState([]);
-  const maxNumber = 1;
 
-  const onChange = (image: ImageType, addUpdateIndex: number[] | undefined) => {
-    // data for submit
-    console.log(image, addUpdateIndex);
-    setImage(image as never[]);
-  };
+  // const onChange = (image: ImageType, addUpdateIndex: number[] | undefined) => {
+  //   if (image.length > 0) {
+  //     const url = image[0].data_url;
+  //     setImageUrl(url);
+  //   } else {
+  //     setImageUrl(""); // Reset the URL when no image is selected
+  //   }
+
+  //   console.log(image, addUpdateIndex);
+  //   setImage(image as never[]);
+  // };
+
   return (
     <div className="my-10 flex flex-col">
       <FormHeader title={title} />
       <FormBody>
         <div className="flex grid-cols-4 flex-col-reverse gap-10 lg:grid">
-          <ImageUploading
-            multiple
-            value={image}
-            onChange={onChange}
-            maxNumber={maxNumber}
-            dataURLKey="data_url"
-          >
-            {({
-              imageList,
-              onImageUpload,
-              onImageUpdate,
-              onImageRemove,
-              isDragging,
-              dragProps,
-            }) => (
-              <>
-                {imageList.length === 0 ? (
-                  <div className="col-span-1 flex flex-col items-center justify-center">
-                    <div className="relative h-[230px] w-[250px] md:w-full xl:h-[270px] xl:w-[250px]">
-                      <Image
-                        src="https://greencards.uz/img/avatar.png"
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className="object-contain"
-                      />
-                    </div>
-                    <button onClick={onImageUpload} className="mt-3">
-                      {t("button")}
-                    </button>
-                  </div>
-                ) : (
-                  imageList.map((image, i) => (
-                    <div
-                      key={i}
-                      className="col-span-1 flex flex-col items-center justify-center"
-                    >
-                      <div className="relative h-[230px] w-[250px] md:w-full xl:h-[270px] xl:w-[250px]">
-                        <Image
-                          src={`${image.dataURL}`}
-                          alt=""
-                          fill
-                          sizes="100vw"
-                          className="object-contain"
-                        />
-                      </div>
-                      <button onClick={onImageUpload} className="mt-3">
-                        {t("button")}
-                      </button>
-                    </div>
-                  ))
-                )}
-              </>
-            )}
-          </ImageUploading>
+          <div className="col-span-1 flex flex-col items-center justify-center">
+            <FormImageUpload />
+          </div>
 
           <div className="col-span-3 flex flex-col">
             <h3 className="text-lg font-medium text-blue-600 xl:text-xl">

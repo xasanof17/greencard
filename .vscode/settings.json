@@ -4,5 +4,5 @@
   },
   "material-icon-theme.files.associations": {
     "redux": "./extensions/icons/redux.svg"
-  }
+  },
 }

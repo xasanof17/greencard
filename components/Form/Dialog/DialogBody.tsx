@@ -14,6 +14,7 @@ import { Button } from "@/shared/ui";
 import GenderRadios from "../GenderRadios";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
+import FormImageUpload from "../FormImageUpload";
 
 type DialogBodyProps = {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -49,16 +50,7 @@ const DialogBody: FC<DialogBodyProps> = ({ setIsOpen }) => {
           </div>
           <div className="flex w-[250px] flex-col items-start">
             <label className="label">Image</label>
-            <div className="relative mb-3 h-[250px] w-full">
-              <Image
-                src="/opengraph-image.jpg"
-                fill
-                alt="img"
-                className="object-cover"
-                sizes="100vw"
-              />
-            </div>
-            <Button className="w-full">upload</Button>
+            <FormImageUpload />
           </div>
         </div>
         <div className={variants.sides}>
