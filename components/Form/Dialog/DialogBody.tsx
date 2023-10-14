@@ -13,7 +13,7 @@ import { DialogHeader } from ".";
 import { Button } from "@/shared/ui";
 import GenderRadios from "../GenderRadios";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 type DialogBodyProps = {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -21,6 +21,7 @@ type DialogBodyProps = {
 
 const DialogBody: FC<DialogBodyProps> = ({ setIsOpen }) => {
   const { control } = useFormContext();
+  const locale = useLocale();
   const t = useTranslations("PersonalData");
   const variants = {
     sides: "flex flex-col space-y-4",
@@ -32,7 +33,11 @@ const DialogBody: FC<DialogBodyProps> = ({ setIsOpen }) => {
         <div className={variants.sides}>
           <TextInputController
             name="lastName"
-            label={t("surname.label")}
+            label={
+              locale == "en" || locale == "ru"
+                ? t("surname.label").slice(4)
+                : t("surname.label")
+            }
             placeholder={t("surname.placeholder")}
             control={control}
           />
@@ -59,13 +64,19 @@ const DialogBody: FC<DialogBodyProps> = ({ setIsOpen }) => {
         <div className={variants.sides}>
           <TextInputController
             name="firstName"
-            label={t("name.label")}
+            label={
+              locale == "en" || locale == "ru"
+                ? t("name.label").slice(4)
+                : t("name.label")
+            }
             placeholder={t("name.placeholder")}
             control={control}
           />
           <div className="flex flex-col">
             <label htmlFor="birthday.label" className="label">
-              {t("birhday.label")}
+              {locale == "en" || locale == "ru"
+                ? t("birhday.label").slice(4)
+                : t("birhday.label")}
             </label>
             <div className="flex flex-1 flex-col space-y-3 sm:items-start lg:flex-row lg:space-x-2 lg:space-y-0">
               <NumInputController
@@ -83,15 +94,27 @@ const DialogBody: FC<DialogBodyProps> = ({ setIsOpen }) => {
           </div>
           <div className="flex flex-1 flex-col items-start space-y-4">
             <CountrySelectController
-              label={t("placeOfBirth.country")}
+              label={
+                locale == "en" || locale == "ru"
+                  ? t("placeOfBirth.country").slice(4)
+                  : t("placeOfBirth.country")
+              }
               control={control}
             />
             <CountrySelectController
-              label={t("placeOfBirth.state")}
+              label={
+                locale == "en" || locale == "ru"
+                  ? t("placeOfBirth.state").slice(4)
+                  : t("placeOfBirth.state")
+              }
               control={control}
             />
             <CountrySelectController
-              label={t("placeOfBirth.district")}
+              label={
+                locale == "en" || locale == "ru"
+                  ? t("placeOfBirth.district").slice(4)
+                  : t("placeOfBirth.district")
+              }
               control={control}
             />
           </div>

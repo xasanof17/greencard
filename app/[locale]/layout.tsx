@@ -9,7 +9,10 @@ import meta from "@/meta";
 import clsx from "clsx";
 import Analytics from "@/meta/Analytics";
 
-const inter = Inter({ subsets: ["latin", "cyrillic"] });
+const inter = Inter({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
+});
 
 type LayoutProps = {
   children: ReactNode;
