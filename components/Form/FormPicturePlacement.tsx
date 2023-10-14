@@ -44,44 +44,28 @@ const PicturePlacementForm: FC<FormPicturePlacementProps> = ({ title }) => {
               isDragging,
               dragProps,
             }) => (
-              <>
-                {imageList.length === 0 ? (
-                  <div className="col-span-1 flex flex-col items-center justify-center">
-                    <div className="relative h-[230px] w-[250px] md:w-full xl:h-[270px] xl:w-[250px]">
-                      <Image
-                        src="https://greencards.uz/img/avatar.png"
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className="object-contain"
-                      />
-                    </div>
-                    <button onClick={onImageUpload} className="mt-3">
-                      {t("button")}
-                    </button>
-                  </div>
-                ) : (
-                  imageList.map((image, i) => (
-                    <div
-                      key={i}
-                      className="col-span-1 flex flex-col items-center justify-center"
-                    >
-                      <div className="relative h-[230px] w-[250px] md:w-full xl:h-[270px] xl:w-[250px]">
-                        <Image
-                          src={`${image.dataURL}`}
-                          alt=""
-                          fill
-                          sizes="100vw"
-                          className="object-contain"
-                        />
-                      </div>
-                      <button onClick={onImageUpload} className="mt-3">
-                        {t("button")}
-                      </button>
-                    </div>
-                  ))
-                )}
-              </>
+              <div
+                // key={i}
+                className="col-span-1 flex flex-col items-center justify-center"
+              >
+                <div className="relative h-[230px] w-[250px] md:w-full xl:h-[270px] xl:w-[250px]">
+                  <Image
+                    // src={`${image.dataURL}`}
+                    src={
+                      // imageList.length == 0
+                        // ? (imageList[0].dataURL?.toString() as string)
+                        "https://greencards.uz/img/avatar.png"
+                    }
+                    alt=""
+                    fill
+                    sizes="100vw"
+                    className="object-contain"
+                  />
+                </div>
+                <button onClick={onImageUpload} className="mt-3">
+                  {t("button")}
+                </button>
+              </div>
             )}
           </ImageUploading>
 
