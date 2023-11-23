@@ -14,7 +14,7 @@ const Footer = () => {
     {
       title: "Instagram",
       Icon: FaInstagram,
-      href: "https://instagram.com",
+      href: "https://instagram.com/1henotorious_",
     },
   ];
   return (
@@ -48,21 +48,12 @@ const Footer = () => {
               <span>+998900198505</span>
             </Link>
           </li>
-          <li>
-            <Link
-              href="tel:+998900198505"
-              className="flex items-center space-x-2 text-lg text-gray-600 hover:text-blue-500"
-            >
-              <MdPhone className="text-[20px]" />
-              <span>+998900198505</span>
-            </Link>
-          </li>
         </ul>
       </div>
       <p className="mt-4 border-t py-3 text-center text-base font-medium text-gray-600">
         &copy;
         <Link
-          href="https://bit.ly/javohir"
+          href="https://portfoliowebapp.vercel.app"
           className="font-semibold text-blue-500"
           target="_blank"
         >
